@@ -7,6 +7,7 @@ export default function PA() {
   return (
     <Fragment>
         <div className={classes.container}>
+        <h5>Personal</h5>
         <label htmlFor="marital">Relationship Status
         <select id="marital">
             <option>--select--</option>
@@ -17,7 +18,7 @@ export default function PA() {
         <label htmlFor="claim">Claim Type
         <select id="claim">
             <option>--select--</option>
-            <option>Guarenteed Pension Credit</option>
+            <option>GPC</option>
             <option>GPC + Savings credit</option>
         </select>
         </label>
