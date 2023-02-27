@@ -2,11 +2,13 @@
 /*--===============Applicable Amounts Master================ */
 
 const AA = {
-    single: "value",
-    couple: "value",
+    GPCsingle: 182.60,
+    GPCcouple: 278.70,
     SDP: "value",
-    SDP2: "value"
-    SCSingle: 14.48
-    SCCouple: 16.20
-    capitalLimit: 10000
+    SDP2: "value",
+    SCSingle: 14.48,
+    SCCouple: 16.20,
+    capitalLimit: 10000,
+    
+    
 }
