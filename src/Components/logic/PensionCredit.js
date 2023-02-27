@@ -18,14 +18,15 @@ const stateOBJ = {
 maybe use helper function? */
 
 const calcPensionCredit = (applicableAmount, income, stateCOUPLE) => {
-  
-  // determines GPC 
+
     let a = applicableAmount
     let b = income
     let c = stateCOUPLE
     let GPC = 0
     let SC = 0
     let maxSC = 0
+    
+    // SINGLE:
     if (!c) {
         // finds GPC
         if(a - b > 0) { GPC = a - b}
@@ -35,6 +36,24 @@ const calcPensionCredit = (applicableAmount, income, stateCOUPLE) => {
          { maxSC = ((b - thresholdSingle) * 0.6)
          } else {
            maxSC = maxSC1
+           if(maxSC > 0) {
+             SC = maxSC - ( (b - a) * 0.4 )
+             console.log(SC, GPC)
+           }
+         }    
+    } 
+    
+    // COUPLE: 
+    
+      if (c) {
+        // finds GPC
+        if(a - b > 0) { GPC = a - b}
+        
+        // finds SC
+        if((b - thresholdCouple) * 0.6 < maxSC2) 
+         { maxSC = ((b - thresholdCouple) * 0.6)
+         } else {
+           maxSC = maxSC2
            if(maxSC > 0) {
              SC = maxSC - ( (b - a) * 0.4 )
              console.log(SC, GPC)
