@@ -1,4 +1,3 @@
-
 /*===========Penion Credit Logic & calculation==============*/
 const thresholdSingle = 158.47
 const thresholdCouple = 251.70
@@ -38,12 +37,14 @@ const calcPensionCredit = (applicableAmount, income, stateCOUPLE) => {
            maxSC = maxSC1
            if(maxSC > 0) {
              SC = maxSC - ( (b - a) * 0.4 )
-             console.log(SC, GPC)
-           }
+             if(SC <= 0) {
+               SC = 0
+             }
+           } 
          }    
     } 
     
-    // COUPLE: 
+    //COUPLE: 
     
       if (c) {
         // finds GPC
@@ -56,10 +57,23 @@ const calcPensionCredit = (applicableAmount, income, stateCOUPLE) => {
            maxSC = maxSC2
            if(maxSC > 0) {
              SC = maxSC - ( (b - a) * 0.4 )
-             console.log(SC, GPC)
+             if(SC <= 0) {
+               SC = 0
+             }
            }
          }    
     } 
+     
+    console.log(`GPC: ${GPC.toFixed(2)} SC: ${SC.toFixed(2)}`)
+    
 }
-// test: calcPensionCredit(182.70, 200, false) (clear - functions on basis of truthy) 
 
+// test: calcPensionCredit(182.60, 200, false) (clear - functions on basis of truthy) (expected OP  = GPC: 0.00 SC: 7.52)
+// test: calcPensionCredit(182.60, 147, false) (clear - functions on basis of truthy) (expected OP  = GPC: 35.60 SC: 0.00)
+// test: calcPensionCredit(182.60, 280, false) (clear - functions on basis of truthy) (expected OP  = GPC: 0.00 SC: 0.00)
+
+// test: calcPensionCredit(278.70, 280, true) (clear - functions on basis of truthy) (expected OP  = GPC: 0.00 SC: 15.68)
+// test: calcPensionCredit(278.70, 237.50, true) (clear - functions on basis of truthy) (expected OP  = GPC: 41.20 SC: 0.00)
+// test: calcPensionCredit(417.50, 410, true) (clear - functions on basis of truthy) (expected OP  = GPC: 7.50 SC: 16.20)
+
+// 
