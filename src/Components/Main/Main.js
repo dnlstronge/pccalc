@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import Housing from "../Housing/Housing";
 import Additional from "../PA/Additional";
+import Children from "../Children/Children"
 import PA from "../PA/PA";
 import classes from "./Main.module.css";
 
@@ -10,7 +11,7 @@ const Main = (props) => {
             <PA/>
             <Additional/>
             <Housing/>
-            
+            <Children/>
         </Fragment>
     )
 }
