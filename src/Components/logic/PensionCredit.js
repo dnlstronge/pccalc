@@ -12,6 +12,10 @@ const stateOBJ = {
     stateCouple: false
   }
 
+
+/* Branch the function into two routes, single couple - apply the same logic with different thresholds 
+maybe use helper function? */
+
 const CalcPensionCredit = (applicableAmount, income, stateCOUPLE) => {
   
   // determines GPC 
@@ -19,8 +23,14 @@ const CalcPensionCredit = (applicableAmount, income, stateCOUPLE) => {
     let b = income
     let c = stateCOUPLE
     let GPC = 0
-    if ( a - b > 0) { GPC = a - b }
-  // determine SC
-    if ( b < 
+    let SC = 0
+    if (!c) {
+        // finds GPC
+        if(a - b > 0) {GPC = a - b}
+        
+        // finds SC
+        if(b * 0.6 < thresholdSingle) {
+            
+    } 
   
     }
