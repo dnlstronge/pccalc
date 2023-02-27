@@ -32,8 +32,8 @@ export default function Children() {
                 <option value="10">10</option>
             </select>
             </label>
-            <label htmlFor="dlaL" className={classes.label}>Disability lower
-            <select onChange={handleHigher} id="dlaL" className={classes.select}>
+            <label htmlFor="dlaH" className={classes.label}>Disability Higher
+            <select onChange={handleHigher} id="dlaH" className={classes.select}>
                 <option value="0">Select</option>
                 <option value="0">0</option>
                 <option value="1">1</option>
