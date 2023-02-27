@@ -12,6 +12,7 @@ export default function Children() {
 
   return (
     <div className={classes.container}>
+      <h5>Dependents</h5>
         <label className={classes.label} htmlFor='children'>The claim includes dependents
             <input onClick={handleChild} className={classes.checkbox} id="children" type="checkbox"></input>
         </label>
