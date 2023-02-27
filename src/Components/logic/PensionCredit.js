@@ -1,6 +1,5 @@
 
 /*===========Penion Credit Logic & calculation==============*/
-
 const thresholdSingle = 158.47
 const thresholdCouple = 251.70
 const maxSC1 = 14.48 
@@ -18,7 +17,7 @@ const stateOBJ = {
 /* Branch the function into two routes, single couple - apply the same logic with different thresholds 
 maybe use helper function? */
 
-const CalcPensionCredit = (applicableAmount, income, stateCOUPLE) => {
+const calcPensionCredit = (applicableAmount, income, stateCOUPLE) => {
   
   // determines GPC 
     let a = applicableAmount
@@ -29,12 +28,19 @@ const CalcPensionCredit = (applicableAmount, income, stateCOUPLE) => {
     let maxSC = 0
     if (!c) {
         // finds GPC
-        if(a - b > 0) {GPC = a - b}
+        if(a - b > 0) { GPC = a - b}
         
         // finds SC
-        if( (b - thresholdSingle) * 0.6 < maxSC1)  { return maxSC = ((b - thresholdSingle) * 0.6)
-         }
-            
+        if((b - thresholdSingle) * 0.6 < maxSC1) 
+         { maxSC = ((b - thresholdSingle) * 0.6)
+         } else {
+           maxSC = maxSC1
+           if(maxSC > 0) {
+             SC = maxSC - ( (b - a) * 0.4 )
+             console.log(SC, GPC)
+           }
+         }    
     } 
-  
-    }
+}
+// test: calcPensionCredit(182.70, 200, false) (clear - functions on basis of truthy) 
+
