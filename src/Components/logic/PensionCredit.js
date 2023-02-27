@@ -40,11 +40,14 @@ const calcPensionCredit = (applicableAmount, income, stateCOUPLE) => {
              if(SC <= 0) {
                SC = 0
              }
+             if(SC > maxSC1) {
+               SC = maxSC1
+             }
            } 
          }    
     } 
     
-    //COUPLE: 
+    // COUPLE: 
     
       if (c) {
         // finds GPC
@@ -60,6 +63,9 @@ const calcPensionCredit = (applicableAmount, income, stateCOUPLE) => {
              if(SC <= 0) {
                SC = 0
              }
+             if(SC > maxSC2) {
+               SC = maxSC2
+             }
            }
          }    
     } 
@@ -67,6 +73,9 @@ const calcPensionCredit = (applicableAmount, income, stateCOUPLE) => {
     console.log(`GPC: ${GPC.toFixed(2)} SC: ${SC.toFixed(2)}`)
     
 }
+
+
+    
 
 // test: calcPensionCredit(182.60, 200, false) (clear - functions on basis of truthy) (expected OP  = GPC: 0.00 SC: 7.52)
 // test: calcPensionCredit(182.60, 147, false) (clear - functions on basis of truthy) (expected OP  = GPC: 35.60 SC: 0.00)
@@ -76,4 +85,4 @@ const calcPensionCredit = (applicableAmount, income, stateCOUPLE) => {
 // test: calcPensionCredit(278.70, 237.50, true) (clear - functions on basis of truthy) (expected OP  = GPC: 41.20 SC: 0.00)
 // test: calcPensionCredit(417.50, 410, true) (clear - functions on basis of truthy) (expected OP  = GPC: 7.50 SC: 16.20)
 
-// 
+
