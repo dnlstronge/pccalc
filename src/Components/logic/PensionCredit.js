@@ -71,7 +71,7 @@ const calcPensionCredit = (applicableAmount, income, stateCOUPLE) => {
     } 
      
     console.log(`GPC: ${GPC.toFixed(2)} SC: ${SC.toFixed(2)}`)
-    return GPC.toFixed(2) SC.toFixed(2)
+    return GPC.toFixed(2), SC.toFixed(2)
     
     //update date local state in return statement via reducer or usestate
 }
