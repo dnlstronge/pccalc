@@ -6,10 +6,14 @@ export default function Additional({ updateAction }) {
    
 
     const handleSDP = (e) => {
-
+        updateAction({
+            type: e.target.value
+        })
     }
     const handleCarer = (e) => {
-
+        updateAction({
+            type: e.target.value
+        })
     }
     const handleTransitional = (e) => {
 
