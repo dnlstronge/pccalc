@@ -13,6 +13,15 @@ export default function PA({ updateAction }) {
       updateAction({type: "COUPLE"})
     }
   }
+
+  const handleType = (e) => {
+    if(e.target.value === "SINGLE") {
+      updateAction({type: "GPC"})
+    }
+    if(e.target.value === "COUPLE") {
+      updateAction({type: "SC"})
+    }
+  }
   return (
     
     
@@ -28,7 +37,7 @@ export default function PA({ updateAction }) {
         </select>
         </label>
         <label htmlFor="claim">Claim Type
-        <select id="claim">
+        <select onChange={handleType} id="claim">
             <option value="NONE">--select--</option>
             <option value="GPC">GPC</option>
             <option value="GPCSC">GPC + Savings credit</option>
