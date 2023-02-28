@@ -24,10 +24,10 @@ const Main = (props) => {
             <Housing/>
             <Children/>
             <div className={classes.statecontainer}>
-                <p className={classes.state_p}></p>
-                <p className={classes.state_p}></p>
-                <p className={classes.state_p}></p>
-                <p className={classes.state_p}></p>
+                <p className={classes.state_p}>Applicable Amount: {applicable.applicableAmount} </p>
+                <p className={classes.state_p}>Income: {applicable.income}</p>
+                <p className={classes.state_p}>Is couple: {applicable.stateCouple ? "true" : "false" }</p>
+                <p className={classes.state_p}>Claim Type: {applicable.claimType}</p>
             </div>
         </Fragment>
     )
