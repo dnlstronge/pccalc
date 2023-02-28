@@ -6,6 +6,9 @@ import classes from "./PA.module.css"
 export default function PA({ updateAction }) {
 
   const handleCouple = (e) => {
+    if(e.target.value === "SELECT") {
+      updateAction({type: "SELECT"})
+    }
     if(e.target.value === "SINGLE") {
       updateAction({type: "SINGLE"})
     }
@@ -15,10 +18,13 @@ export default function PA({ updateAction }) {
   }
 
   const handleType = (e) => {
-    if(e.target.value === "SINGLE") {
+    if(e.target.value === "NONE") {
+      updateAction({type: "NONE"})
+    }
+    if(e.target.value === "GPC") {
       updateAction({type: "GPC"})
     }
-    if(e.target.value === "COUPLE") {
+    if(e.target.value === "GPCSC") {
       updateAction({type: "GPCSC"})
     }
   }
@@ -31,7 +37,7 @@ export default function PA({ updateAction }) {
         <h5>Personal</h5>
         <label htmlFor="marital">Relationship Status
         <select onChange={handleCouple} id="marital">
-            <option value="select">--select--</option>
+            <option value="SELECT">--select--</option>
             <option value="SINGLE">Single</option>
             <option value="COUPLE">Couple</option>
         </select>
