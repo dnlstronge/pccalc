@@ -19,7 +19,7 @@ export default function PA({ updateAction }) {
       updateAction({type: "GPC"})
     }
     if(e.target.value === "COUPLE") {
-      updateAction({type: "SC"})
+      updateAction({type: "GPCSC"})
     }
   }
   return (

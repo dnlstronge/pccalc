@@ -7,7 +7,12 @@ import classes from "./Main.module.css";
 
 
 const PC_REDUCER = (state, action) => {
-
+if(action.type === "SINGLE") {
+    return {...state, stateCouple: false}
+}
+if(action.type === "COUPLE") {
+    return {...state, stateCouple: true}
+}
 }
 
 const Main = (props) => {
@@ -23,6 +28,8 @@ const Main = (props) => {
             <Additional/>
             <Housing/>
             <Children/>
+
+            {/* State value display: */}
             <div className={classes.statecontainer}>
                 <p className={classes.state_p}>Applicable Amount: {applicable.applicableAmount} </p>
                 <p className={classes.state_p}>Income: {applicable.income}</p>
