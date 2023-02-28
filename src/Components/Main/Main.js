@@ -1,9 +1,14 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useReducer } from "react";
 import Housing from "../Housing/Housing";
 import Additional from "../PA/Additional";
 import Children from "../Children/Children"
 import PA from "../PA/PA";
 import classes from "./Main.module.css";
+
+
+const PC_REDUCER = (state, action) => {
+
+}
 
 const Main = (props) => {
     const [applicable, dispatchReducer] = useReducer(PC_REDUCER, {
@@ -13,7 +18,7 @@ const Main = (props) => {
     } )
     return (
         <Fragment>
-            <PA/>
+            <PA updateAction={dispatchReducer}/>
             <Additional/>
             <Housing/>
             <Children/>
