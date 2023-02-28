@@ -1,7 +1,17 @@
 import React, { Fragment }from 'react'
 import classes from "./Additional.module.css"
 
-export default function Additional() {
+export default function Additional({ updateAction }) {
+
+    const handleSDP = (e) => {
+
+    }
+    const handleCarer = (e) => {
+
+    }
+    const handleTransitional = (e) => {
+        
+    }
   return (
     <div className={classes.container}>
         <h5>Additional Amounts</h5>
