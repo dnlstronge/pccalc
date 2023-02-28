@@ -37,7 +37,7 @@ const Main = (props) => {
     return (
         <Fragment>
             <PA updateAction={dispatchReducer}/>
-            <Additional/>
+            <Additional updateAction={dispatchReducer}/>
             <Housing/>
             <Children/>
 
