@@ -1,3 +1,38 @@
+=======UPDATE 28/02/2023========
+
+[x] - create logic for determining pension credit. The function branches into two sections which apply logic depending on a state boolean for wether the claim 
+is for a couple or not. The function takes two other parameters from state which are the applicable amount (based on the claimants circumstances) & qualifying income.
+
+[x] - basic structure of template & inputs completed
+[x] - handlers and reducer added
+[x] - i've hooked most of this up and currently have the state values in a panel I've added which displays the state so I can see how the reducer is working
+      everything seems to be getting dispatched propertly and by viewing the RT results I ruled out a few edge cases/combos I hadn't initially thought of. 
+ 
+ TODO: 
+[] - Needs a bit of styling as it looks like a spreadsheets nightmare, everything is modular so what serves one component may serve another:)
+[] - App is small enough and I don't envisage drilling more than 1 parent to child as to whether is context is needed. 
+[] - get useEffect hooked up with the function paramters as deps, may need to call within useEffect, will work on this
+
+
+logic: 
+
+I was quite pleased with the logic I wrote for PC, in the same function it can return 0 for both GPC and SC, a value for GPC and 0, a combination of the two or savings credit only:  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
