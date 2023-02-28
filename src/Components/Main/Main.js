@@ -14,7 +14,8 @@ const Main = (props) => {
     const [applicable, dispatchReducer] = useReducer(PC_REDUCER, {
         applicableAmount: 0,
         income: 0,
-        stateCouple: 0
+        stateCouple: false,
+        claimType: ""
     } )
     return (
         <Fragment>

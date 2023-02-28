@@ -1,26 +1,37 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import classes from "./PA.module.css"
 
 
 
-export default function PA() {
+export default function PA({ updateAction }) {
+
+  const handleCouple = (e) => {
+    if(e.target.value === "SINGLE") {
+      updateAction({type: "SINGLE"})
+    }
+    if(e.target.value === "COUPLE") {
+      updateAction({type: "COUPLE"})
+    }
+  }
   return (
     
+    
+
     <Fragment>
         <div className={classes.container}>
         <h5>Personal</h5>
         <label htmlFor="marital">Relationship Status
-        <select id="marital">
-            <option>--select--</option>
-            <option>Single</option>
-            <option>Couple</option>
+        <select onChange={handleCouple} id="marital">
+            <option value="select">--select--</option>
+            <option value="SINGLE">Single</option>
+            <option value="COUPLE">Couple</option>
         </select>
         </label>
         <label htmlFor="claim">Claim Type
         <select id="claim">
-            <option>--select--</option>
-            <option>GPC</option>
-            <option>GPC + Savings credit</option>
+            <option value="NONE">--select--</option>
+            <option value="GPC">GPC</option>
+            <option value="GPCSC">GPC + Savings credit</option>
         </select>
         </label>
       </div>
