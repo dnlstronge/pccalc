@@ -11,7 +11,9 @@ is for a couple or not. The function takes two other parameters from state which
  TODO: 
  
 [ ] - Needs a bit of styling as it looks like a spreadsheets nightmare, everything is modular so what serves one component may serve another:)
+
 [ ] - App is small enough and I don't envisage drilling more than 1 parent to child as to whether is context is needed. 
+
 [ ] - get useEffect hooked up with the function paramters as deps, may need to call within useEffect, will work on this
 
 
