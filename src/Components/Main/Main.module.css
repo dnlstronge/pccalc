@@ -2,3 +2,12 @@
     display: flex;
     flex-direction: column;
 }
+.statecontainer {
+    display: flex;
+    flex-direction: column;
+    height: 10rem;
+    width: 6rem;
+    background-color: antiquewhite;
+    border-radius: 5%;
+    margin-left: 3rem;
+}

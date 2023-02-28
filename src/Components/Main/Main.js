@@ -23,6 +23,12 @@ const Main = (props) => {
             <Additional/>
             <Housing/>
             <Children/>
+            <div className={classes.statecontainer}>
+                <p className={classes.state_p}></p>
+                <p className={classes.state_p}></p>
+                <p className={classes.state_p}></p>
+                <p className={classes.state_p}></p>
+            </div>
         </Fragment>
     )
 }
