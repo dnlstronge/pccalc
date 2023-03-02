@@ -34,16 +34,16 @@ export default function PA({ updateAction }) {
 
     <Fragment>
         <div className={classes.container}>
-        <h5>Personal</h5>
-        <label htmlFor="marital">Relationship Status
-        <select onChange={handleCouple} id="marital">
+        <h5 className={classes.heading}>Personal</h5>
+        <label className={classes.label} htmlFor="marital">Relationship Status
+        <select className={classes.select} onChange={handleCouple} id="marital">
             <option value="SELECT">--select--</option>
             <option value="SINGLE">Single</option>
             <option value="COUPLE">Couple</option>
         </select>
         </label>
-        <label htmlFor="claim">Claim Type
-        <select onChange={handleType} id="claim">
+        <label className={classes.label} htmlFor="claim">Claim Type
+        <select className={classes.select} onChange={handleType} id="claim">
             <option value="NONE">--select--</option>
             <option value="GPC">GPC</option>
             <option value="GPCSC">GPC + Savings credit</option>
