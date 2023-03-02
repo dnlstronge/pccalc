@@ -24,11 +24,20 @@ export default function Additional({ updateAction }) {
                 ...additional, SDP: PCE.SDP
             })
         }
+        if(e.target.value === "SDPONE") {
+            setAdditional({
+                ...additional, SDP: PCE.SDP2
+            })
+        }
      }
+
+
+
+
     const handleCarer = (e) => {
-        updateAction({
-            type: e.target.value
-        })
+        if(e.target.value === "CARENULL") {
+            setAdditional({...additional, CA: })
+        }
     }
     const handleTransitional = (e) => {
 
