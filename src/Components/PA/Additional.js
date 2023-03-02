@@ -25,7 +25,7 @@ export default function Additional({ updateAction }) {
                 ...additional, SDP: PCE.SDP
             })
         }
-        if(e.target.value === "SDPONE") {
+        if(e.target.value === "SDPBOTH") {
             setAdditional({
                 ...additional, SDP: PCE.SDP2
             })
@@ -48,16 +48,16 @@ export default function Additional({ updateAction }) {
     }
 
     const handleTransitional = (e) => {
-        setAdditional({...additional, TRANS: e.target.value.toFixed(2)})
+        setAdditional({...additional, TRANS: Number(e.target.value)})
     }
 
-    useEffect((setTemp) => {
+    useEffect(() => {
         let a = additional.SDP
         let b = additional.CA
         let c = additional.TRANS
         setTemp(a + b + c)
         console.log(temp)
-    }, [additional.SDP, additional.CA, additional.TRANS])
+    }, [additional.SDP, additional.CA, additional.TRANS, temp])
 
   return (
     <div className={classes.container}>
