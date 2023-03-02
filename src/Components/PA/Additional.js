@@ -14,11 +14,17 @@ export default function Additional({ updateAction }) {
    
 
     const handleSDP = (e) => {
-
-        setAdditional({
-            ...additional, SDP
+        if(e.target.value === "SDPNULL") {
+            setAdditional({
+            ...additional, SDP: 0
         })
-    }
+        } 
+        if(e.target.value === "SDPONE") {
+            setAdditional({
+                ...additional, SDP: PCE.SDP
+            })
+        }
+     }
     const handleCarer = (e) => {
         updateAction({
             type: e.target.value
