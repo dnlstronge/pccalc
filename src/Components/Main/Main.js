@@ -6,26 +6,32 @@ import PA from "../PA/PA";
 import classes from "./Main.module.css";
 
 
-const PC_REDUCER = (state, action) => {
-if(action.type === "SELECT") {
-    return {...state, stateCouple: false}
-}   
-if(action.type === "SINGLE") {
-    return {...state, stateCouple: false}
-}
-if(action.type === "COUPLE") {
-    return {...state, stateCouple: true}
-}
-if(action.type === "NONE") {
-    return {...state, claimType: ""}
-}
-if(action.type === "GPC") {
-    return {...state, claimType: "GPC"}
-}
-if(action.type === "GPCSC") {
-    return {...state, claimType: "GPCSC"}
-}
-}
+const PC_REDUCER = (state, action) => 
+
+    {
+
+    switch (action.type) {
+    case "SELECT": {
+        return {...state, stateCouple: false}
+    }
+    case "SINGLE": {
+        return {...state, stateCouple: false}
+    }
+    case "COUPLE": {
+        return {...state, stateCouple: true}
+    }
+    case "NONE": {
+        return {...state, claimType: ""}
+    }
+    case "GPC": {
+        return {...state, claimType: "GPC"}
+    }
+    case "GPSC": {
+        return {...state, claimType: "GPCSC"}
+    }
+    default:
+    }
+    }
 
 const Main = (props) => {
     const [applicable, dispatchReducer] = useReducer(PC_REDUCER, {
