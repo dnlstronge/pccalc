@@ -1,13 +1,22 @@
-import React, { Fragment }from 'react'
+import React, { Fragment, useState }from 'react'
 import classes from "./Additional.module.css"
+import AA from "../ApplicableAmounts/AA"
+
+
+const PCE = AA
 
 export default function Additional({ updateAction }) {
-
+    const [additional, setAdditional] = useState({
+        SDP: 0,
+        CA: 0,
+        TRANS: 0
+    })
    
 
     const handleSDP = (e) => {
-        updateAction({
-            type: e.target.value
+
+        setAdditional({
+            ...additional, SDP
         })
     }
     const handleCarer = (e) => {

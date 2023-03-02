@@ -12,3 +12,4 @@ const AA = {
     
     
 }
+export default AA;

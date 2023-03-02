@@ -37,6 +37,7 @@ const Main = (props) => {
     const [applicable, dispatchReducer] = useReducer(PC_REDUCER, {
         applicableAmount: 0,
         income: 0,
+        additional: 0,
         stateCouple: false,
         claimType: ""
     } )
