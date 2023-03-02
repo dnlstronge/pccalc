@@ -52,7 +52,11 @@ export default function Additional({ updateAction }) {
     }
 
     useEffect((setTemp) => {
-        setTemp()
+        let a = additional.SDP
+        let b = additional.CA
+        let c = additional.TRANS
+        setTemp(a + b + c)
+        console.log(temp)
     }, [additional.SDP, additional.CA, additional.TRANS])
 
   return (
