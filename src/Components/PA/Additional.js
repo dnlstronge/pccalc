@@ -51,7 +51,9 @@ export default function Additional({ updateAction }) {
         setAdditional({...additional, TRANS: e.target.value.toFixed(2)})
     }
 
-    useEffect(() => {}, [])
+    useEffect((setTemp) => {
+        setTemp()
+    }, [additional.SDP, additional.CA, additional.TRANS])
 
   return (
     <div className={classes.container}>
