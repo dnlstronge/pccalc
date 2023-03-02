@@ -1,4 +1,4 @@
-import React, { Fragment, useState }from 'react'
+import React, { useState, useEffect }from 'react'
 import classes from "./Additional.module.css"
 import AA from "../ApplicableAmounts/AA"
 
@@ -6,6 +6,7 @@ import AA from "../ApplicableAmounts/AA"
 const PCE = AA
 
 export default function Additional({ updateAction }) {
+    const [temp, setTemp] = useState(0)
     const [additional, setAdditional] = useState({
         SDP: 0,
         CA: 0,
@@ -36,12 +37,22 @@ export default function Additional({ updateAction }) {
 
     const handleCarer = (e) => {
         if(e.target.value === "CARENULL") {
-            setAdditional({...additional, CA: })
+            setAdditional({...additional, CA: 0})
+        }
+        if(e.target.value === "CAREONE") {
+            setAdditional({...additional, CA: PCE.CARE})
+        }
+        if(e.target.value === "CAREBOTH") {
+            setAdditional({...additional, CA: PCE.CARE2})
         }
     }
-    const handleTransitional = (e) => {
 
+    const handleTransitional = (e) => {
+        setAdditional({...additional, TRANS: e.target.value.toFixed(2)})
     }
+
+    useEffect(() => {}, [])
+
   return (
     <div className={classes.container}>
         <h5>Additional Amounts</h5>
