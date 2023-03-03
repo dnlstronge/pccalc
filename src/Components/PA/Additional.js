@@ -67,7 +67,7 @@ export default function Additional({ updateAction }) {
                 <option value="SDPNULL">--select</option>
                 <option value="SDPONE">One</option>
                 <option value="SDPBOTH">Both</option>
-                <option calue="SDPNULL">None</option>
+                <option value="SDPNULL">None</option>
             </select>
         </label>
         <label className={classes.label} htmlFor='care'>Carer
