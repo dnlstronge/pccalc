@@ -1,14 +1,15 @@
 .container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 .statecontainer {
     display: flex;
     flex-direction: column;
-    height: 15rem;
+    height: 20rem;
     width: 8rem;
     background-color: antiquewhite;
     border-radius: 5%;
+    margin-top: 3rem;
     margin-left: 3rem;
     padding-left: 1rem;
 }

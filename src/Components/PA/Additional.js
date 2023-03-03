@@ -55,13 +55,13 @@ export default function Additional({ updateAction }) {
         let a = additional.SDP
         let b = additional.CA
         let c = additional.TRANS
-        setTemp(a + b + c)
-        console.log(temp)
-    }, [additional.SDP, additional.CA, additional.TRANS, temp])
+        return updateAction({type: "ADDITIONAL", additional: a + b + c} )
+        
+    }, [additional.SDP, additional.CA, additional.TRANS, temp, updateAction])
 
   return (
     <div className={classes.container}>
-        <h5>Additional Amounts</h5>
+        <h5 className={classes.heading}>Additional Amounts</h5>
         <label className={classes.label} htmlFor='sdp'>Severe Disabilty
             <select onChange={handleSDP} className={classes.select} id="sdp">
                 <option value="SDPNULL">--select</option>

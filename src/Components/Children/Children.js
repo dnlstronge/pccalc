@@ -17,7 +17,7 @@ export default function Children() {
             <input onClick={handleChild} className={classes.checkbox} id="children" type="checkbox"></input>
         </label>
         <label htmlFor="deps" className={classes.label}>Select Number of dependents
-            <select onchange={handleChild} id="deps" className={classes.select}>
+            <select onChange={handleChild} id="deps" className={classes.select}>
                 <option value="0">Select</option>
                 <option value="0">0</option>
                 <option value="1">1</option>
