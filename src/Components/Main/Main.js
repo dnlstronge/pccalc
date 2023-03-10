@@ -8,14 +8,24 @@ import elements from "../ApplicableAmounts/AA"
 
 const PC_REDUCER = (state, action) => {
   switch (action.type) {
+    /* Child disabilities */
+
+    case "DISLOW": {
+      return ({...state, dislow: elements.disabledChild * action.payload })
+    }
+    case "DISHIGH": {
+      return ({...state, dishigh: elements.disabledChildHigh * action.payload })
+    }
 
     /* Child amounts/dependents */
-    case "PRECHILD": {
+
+    case "CHILDRESET": {
+      return {...state, dependents: 0}
+    }
+    case "CHILDREN": {
       return {...state, dependents: action.payload}
     }
-    case "POSTCHILD": {
-      return {...state, dependents: action.payload}
-    }
+    
     /* Eligible Housing */
     case "HOUSING": {
       return { ...state, housing: action.housing };
@@ -71,7 +81,9 @@ const Main = (props) => {
     stateCouple: "NONE",
     claimType: "",
     housing: 0,
-    depenents: 0
+    dependents: 0,
+    dislow: 0,
+    dishigh: 0
   });
 
   useEffect(() => {

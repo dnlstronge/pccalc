@@ -8,8 +8,11 @@ export default function Children({ updateAction }) {
   const [pre, setPre] = useState(false);
   const [numberChildren, setNumberChildren] = useState(0);
   const [temp, setTemp] = useState(0);
+  
 
   const handleChild = () => {
+    setNumberChildren(0)
+    updateAction({type: "CHILDRESET"})
     hasChild ? setHasChild(false) : setHasChild(true);
   };
   const handlePre = () => {
@@ -46,12 +49,17 @@ useEffect(() => {
        return setTemp(a)
     }
     if(pre && c > 1) {
-        return setTemp((c * b - b) + a)
+        return setTemp((c * b - b + a).toFixed(2))
+    }
+    else {
+        return setTemp((b*c).toFixed(2))
     }
 
-
-    console.log(a, b, c)
 }, [numberChildren, pre])
+
+useEffect(() => {
+    updateAction({type: "CHILDREN", payload: temp})
+}, [temp, updateAction,])
 
   return (
     <div className={classes.container}>
@@ -78,6 +86,7 @@ useEffect(() => {
       <label htmlFor="deps" className={conditionalStyle}>
         Number of dependents
         <select
+          value={numberChildren}
           disabled={!hasChild}
           onChange={handleNumber}
           id="deps"
