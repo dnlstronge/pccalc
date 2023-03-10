@@ -7,7 +7,16 @@ import classes from "./Main.module.css";
 import elements from "../ApplicableAmounts/AA"
 
 const PC_REDUCER = (state, action) => {
+
+
+
   switch (action.type) {
+
+    /* finds total */
+
+    case "TOTAL": {
+      return {...state, TOTAL: action.payload}
+    }
     /* Child disabilities */
 
     case "DISLOW": {
@@ -83,7 +92,8 @@ const Main = (props) => {
     housing: 0,
     dependents: 0,
     dislow: 0,
-    dishigh: 0
+    dishigh: 0,
+    TOTAL: 0
   });
 
   useEffect(() => {
@@ -110,14 +120,7 @@ const Main = (props) => {
     let E = applicable.dislow
     let F = applicable.dishigh
     let total = (A+B+C+D+E+F).toFixed(2)
-    
-    console.log(`Couple value is ${typeof applicable.couple_value}`)
-    console.log(`additional value is ${typeof applicable.additional}`)
-    console.log(`housing value is ${typeof applicable.housing}`)
-    console.log(`dependents value is ${typeof applicable.dependents}`)
-    console.log(`dis low is ${typeof applicable.dislow}`)
-    console.log(`dis high is ${typeof applicable.dishigh}`)
-    console.log(`and the grand total is ${total}`)
+   dispatchReducer({type: "TOTAL", payload: total})
 
   }, 
       [applicable.couple_value,
