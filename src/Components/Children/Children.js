@@ -43,10 +43,10 @@ useEffect(() => {
     let c = numberChildren
 
     if(pre && c === 0) {
-       return setTemp(c)
+       return setTemp(Number(c))
     }
     if(pre && c === 1) {
-       return setTemp(a)
+       return setTemp(Number(a))
     }
     if(pre && c > 1) {
         return setTemp((c * b - b + a).toFixed(2))

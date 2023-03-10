@@ -23,7 +23,7 @@ const PC_REDUCER = (state, action) => {
       return {...state, dependents: 0}
     }
     case "CHILDREN": {
-      return {...state, dependents: action.payload}
+      return {...state, dependents: Number(action.payload)}
     }
     
     /* Eligible Housing */
@@ -99,6 +99,33 @@ const Main = (props) => {
 
     
   }, [applicable.stateCouple, applicable.claimType])
+
+  /*Find total applicable */ 
+
+  useEffect(() => {
+    let A = applicable.couple_value
+    let B = applicable.additional
+    let C = applicable.housing
+    let D = applicable.dependents
+    let E = applicable.dislow
+    let F = applicable.dishigh
+    let total = (A+B+C+D+E+F).toFixed(2)
+    
+    console.log(`Couple value is ${typeof applicable.couple_value}`)
+    console.log(`additional value is ${typeof applicable.additional}`)
+    console.log(`housing value is ${typeof applicable.housing}`)
+    console.log(`dependents value is ${typeof applicable.dependents}`)
+    console.log(`dis low is ${typeof applicable.dislow}`)
+    console.log(`dis high is ${typeof applicable.dishigh}`)
+    console.log(`and the grand total is ${total}`)
+
+  }, 
+      [applicable.couple_value,
+      applicable.additional,
+      applicable.housing,
+      applicable.dependents,
+      applicable.dislow,
+      applicable.dishigh ])
 
   
   return (
