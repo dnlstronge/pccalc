@@ -1,0 +1,36 @@
+.container {
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    height: auto;
+    margin: 1rem;
+    padding: 0.5rem;
+    background: rgb(248, 246, 246);
+    border-radius: 5%;
+    border: 2px solid black;
+}
+
+.heading {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.label {
+    
+    font-size: 11px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    margin: 0.3rem;
+}
+
+.input {
+    font-size: 11px;
+    display: flex;
+    margin-left: 0.3rem;
+    height: auto;
+    width: 4rem;
+}

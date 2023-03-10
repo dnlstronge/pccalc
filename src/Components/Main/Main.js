@@ -49,7 +49,7 @@ const Main = (props) => {
         <section className={classes.section}>
           <PA updateAction={dispatchReducer} />
           <Additional updateAction={dispatchReducer} />
-          <Housing />
+          <Housing updateAction={dispatchReducer}/>
           <Children />
         </section>
 
