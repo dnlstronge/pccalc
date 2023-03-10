@@ -2,13 +2,12 @@ import React, { useState, useEffect } from "react";
 import classes from "./Children.module.css";
 import elements from "../ApplicableAmounts/AA";
 
-const C_high = elements.childpre;
-const C_low = elements.childpost;
 
 export default function Children({ updateAction }) {
   const [hasChild, setHasChild] = useState(false);
   const [pre, setPre] = useState(false);
-  const [number, setNumber] = useState(0);
+  const [numberChildren, setNumberChildren] = useState(0);
+  const [temp, setTemp] = useState(0);
 
   const handleChild = () => {
     hasChild ? setHasChild(false) : setHasChild(true);
@@ -17,7 +16,7 @@ export default function Children({ updateAction }) {
     pre ? setPre(false) : setPre(true);
   };
   const handleNumber = (e) => {
-    if (e.target.value > 0) setNumber(Number(e.target.value));
+  setNumberChildren(Number(e.target.value));
   };
 
   const handleLower = (e) => {
@@ -35,30 +34,25 @@ export default function Children({ updateAction }) {
     : classes.label_checkbox_disabled;
 
   /* push to state:  */
+useEffect(() => {
+    let a = elements.childpre 
+    let b = elements.childpost
+    let c = numberChildren
+
+    if(pre && c === 0) {
+       return setTemp(c)
+    }
+    if(pre && c === 1) {
+       return setTemp(a)
+    }
+    if(pre && c > 1) {
+        return setTemp((c * b - b) + a)
+    }
 
 
-  useEffect(
-    (number, C_high, C_low) => {
-      /*logic for children */
-      const findvalue = (a, b, c) => {
-        if (a === 0) {
-          return 0;
-        } else if (a === 1) {
-          return b;
-        } else {
-          return a * b - c + b;
-        }
-      };
+    console.log(a, b, c)
+}, [numberChildren, pre])
 
-      if (pre) {
-        updateAction({ type: "PRECHILD", payload: findvalue(number, C_high, C_low) });
-      }
-      if (!pre) {
-        updateAction({type: "POSTCHILD", payload: number * C_low })
-      }
-    },
-    [pre, number, updateAction]
-  );
   return (
     <div className={classes.container}>
       <h5 className={classes.heading}>Dependents</h5>
@@ -147,6 +141,9 @@ export default function Children({ updateAction }) {
           <option value="10">10</option>
         </select>
       </label>
+      <div>number of children: {numberChildren}</div>
+      <div>type: {typeof(numberChildren)}</div>
+      <div>value: {temp}</div>
     </div>
   );
 }

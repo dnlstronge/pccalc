@@ -8,6 +8,14 @@ import elements from "../ApplicableAmounts/AA"
 
 const PC_REDUCER = (state, action) => {
   switch (action.type) {
+
+    /* Child amounts/dependents */
+    case "PRECHILD": {
+      return {...state, dependents: action.payload}
+    }
+    case "POSTCHILD": {
+      return {...state, dependents: action.payload}
+    }
     /* Eligible Housing */
     case "HOUSING": {
       return { ...state, housing: action.housing };
@@ -20,7 +28,7 @@ const PC_REDUCER = (state, action) => {
 
     /* Personal Amounts */
     case "SELECT": {
-      return { ...state, stateCouple: "", couple_value: 0, savingsCredit: 0 };
+      return { ...state, stateCouple: "NONE", couple_value: 0, savingsCredit: 0 };
     }
     case "SINGLE": {
       return { ...state, stateCouple: "SINGLE", couple_value: elements.GPCsingle };
@@ -60,10 +68,10 @@ const Main = (props) => {
     additional: 0,
     couple_value: 0,
     savingsCredit: 0,
-    stateCouple: "",
+    stateCouple: "NONE",
     claimType: "",
     housing: 0,
-    children: 0
+    depenents: 0
   });
 
   useEffect(() => {
@@ -108,6 +116,9 @@ const Main = (props) => {
           </p>
           <p className={classes.state_p}>
             Eligible Housing: {applicable.housing}
+          </p>
+          <p className={classes.state_p}>
+            Dependents: {applicable.dependents}
           </p>
         </section>
       </div>
