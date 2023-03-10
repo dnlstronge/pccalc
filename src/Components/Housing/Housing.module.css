@@ -28,9 +28,11 @@
 }
 
 .input {
+    background: rgb(222, 234, 238);
     font-size: 11px;
     display: flex;
-    margin-left: 0.3rem;
+    margin-left: 0.6rem;
     height: auto;
     width: 4rem;
+    border-radius: 3px;
 }
