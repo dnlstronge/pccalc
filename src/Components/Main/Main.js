@@ -132,6 +132,9 @@ const Main = (props) => {
           <p className={classes.state_p}>
             Dependents: {applicable.dependents}
           </p>
+          <p className={classes.state_p}>
+            Child disablity: {(applicable.dislow + applicable.dishigh).toFixed(2)}
+          </p>
         </section>
       </div>
     </Fragment>

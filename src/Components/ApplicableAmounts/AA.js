@@ -14,7 +14,7 @@ const AA = {
     childpre: 66.85,
     childpost: 56.35,
     disabledChild: 30.58,
-    disableCHildHigh: 95.48,
+    disabledChildHigh: 95.48,
     
     
 }

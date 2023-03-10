@@ -150,9 +150,6 @@ useEffect(() => {
           <option value="10">10</option>
         </select>
       </label>
-      <div>number of children: {numberChildren}</div>
-      <div>type: {typeof(numberChildren)}</div>
-      <div>value: {temp}</div>
     </div>
   );
 }
