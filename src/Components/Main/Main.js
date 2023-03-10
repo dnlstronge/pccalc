@@ -88,7 +88,7 @@ const Main = (props) => {
           <PA updateAction={dispatchReducer} />
           <Additional updateAction={dispatchReducer} />
           <Housing updateAction={dispatchReducer} />
-          <Children />
+          <Children updateAction={dispatchReducer}/>
         </section>
 
         {/* State value display: */}

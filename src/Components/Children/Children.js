@@ -1,92 +1,152 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import classes from "./Children.module.css";
+import elements from "../ApplicableAmounts/AA";
 
-export default function Children() {
-    const [hasChild, setHasChild] = useState(false)
-    const [pre, setPre] = useState(false)
-    const [number, setNumber] = useState(0)
+const C_high = elements.childpre;
+const C_low = elements.childpost;
 
-    const handleChild = () => {
-        hasChild ? setHasChild(false) : setHasChild(true)
-    }
-    const handlePre = () => {
-        pre ? setPre(false) : setPre(true)
-    }
-    const handleNumber = (e) => {
-        if(e.target.value > 0)
-        setNumber(Number(e.target.value))
-    }
+export default function Children({ updateAction }) {
+  const [hasChild, setHasChild] = useState(false);
+  const [pre, setPre] = useState(false);
+  const [number, setNumber] = useState(0);
 
-    const handleLower = (e) => {}
-    const handleHigher = (e) => {}
+  const handleChild = () => {
+    hasChild ? setHasChild(false) : setHasChild(true);
+  };
+  const handlePre = () => {
+    pre ? setPre(false) : setPre(true);
+  };
+  const handleNumber = (e) => {
+    if (e.target.value > 0) setNumber(Number(e.target.value));
+  };
 
-    /*Conditional styling */
+  const handleLower = (e) => {
+    updateAction({ type: "DISLOW", payload: Number(e.target.value) });
+  };
+  const handleHigher = (e) => {
+    updateAction({ type: "DISHIGH", payload: Number(e.target.value) });
+  };
 
-    const conditionalStyle = hasChild ? classes.label : classes.label_disabled
-    const conditionalBox = hasChild ? classes.label_checkbox : classes.label_checkbox_disabled
+  /*Conditional styling */
+
+  const conditionalStyle = hasChild ? classes.label : classes.label_disabled;
+  const conditionalBox = hasChild
+    ? classes.label_checkbox
+    : classes.label_checkbox_disabled;
+
+  /* push to state:  */
 
 
-    /* push to state:  */
+  useEffect(
+    (number, C_high, C_low) => {
+      /*logic for children */
+      const findvalue = (a, b, c) => {
+        if (a === 0) {
+          return 0;
+        } else if (a === 1) {
+          return b;
+        } else {
+          return a * b - c + b;
+        }
+      };
 
-    useEffect(() => {}, [])
+      if (pre) {
+        updateAction({ type: "PRECHILD", payload: findvalue(number, C_high, C_low) });
+      }
+      if (!pre) {
+        updateAction({type: "POSTCHILD", payload: number * C_low })
+      }
+    },
+    [pre, number, updateAction]
+  );
   return (
     <div className={classes.container}>
       <h5 className={classes.heading}>Dependents</h5>
-        <label className={classes.label_checkbox} htmlFor='children'>Include dependents
-            <input onClick={handleChild} className={classes.checkbox} id="children" type="checkbox"></input>
-        </label>
-        <label className={conditionalBox} htmlFor='children'>Oldest born before April 2017
-            <input disabled={!hasChild} onClick={handlePre} className={classes.checkbox} id="children" type="checkbox"></input>
-        </label>
-        <label htmlFor="deps" className={conditionalStyle}>Number of dependents
-            <select disabled={!hasChild} onChange={handleNumber} id="deps" className={classes.select}>
-                <option value="0">Select</option>
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-            </select>
-            </label>
-            <label htmlFor="dlaL" className={conditionalStyle}>Disability Lower
-            <select disabled={!hasChild} onChange={handleLower} id="dlaL" className={classes.select}>
-                <option value="0">Select</option>
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-            </select>
-        </label>
-        <label htmlFor="dlaH" className={conditionalStyle}>Disability Higher
-            <select disabled={!hasChild} onChange={handleHigher} id="dlaH" className={classes.select}>
-                <option value="0">Select</option>
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-            </select>
-        </label>
-        
+      <label className={classes.label_checkbox} htmlFor="children">
+        Include dependents
+        <input
+          onClick={handleChild}
+          className={classes.checkbox}
+          id="children"
+          type="checkbox"
+        ></input>
+      </label>
+      <label className={conditionalBox} htmlFor="children">
+        Oldest born before April 2017
+        <input
+          disabled={!hasChild}
+          onClick={handlePre}
+          className={classes.checkbox}
+          id="children"
+          type="checkbox"
+        ></input>
+      </label>
+      <label htmlFor="deps" className={conditionalStyle}>
+        Number of dependents
+        <select
+          disabled={!hasChild}
+          onChange={handleNumber}
+          id="deps"
+          className={classes.select}
+        >
+          <option value="0">Select</option>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </label>
+      <label htmlFor="dlaL" className={conditionalStyle}>
+        Disability Lower
+        <select
+          disabled={!hasChild}
+          onChange={handleLower}
+          id="dlaL"
+          className={classes.select}
+        >
+          <option value="0">Select</option>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </label>
+      <label htmlFor="dlaH" className={conditionalStyle}>
+        Disability Higher
+        <select
+          disabled={!hasChild}
+          onChange={handleHigher}
+          id="dlaH"
+          className={classes.select}
+        >
+          <option value="0">Select</option>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </label>
     </div>
-  )
-};
+  );
+}
