@@ -63,6 +63,7 @@ const Main = (props) => {
     stateCouple: "",
     claimType: "",
     housing: 0,
+    children: 0
   });
 
   useEffect(() => {
@@ -98,7 +99,7 @@ const Main = (props) => {
           </p>
           <p className={classes.state_p}>Income: {applicable.income}</p>
           <p className={classes.state_p}>
-            Is couple: {applicable.stateCouple ? "true" : "false"}
+            Is couple: {applicable.stateCouple}
           </p>
           <p className={classes.state_p}>Claim Type: {applicable.claimType}</p>
           <p className={classes.state_p}>Savings Credit Threshold: {applicable.savingsCredit}</p>

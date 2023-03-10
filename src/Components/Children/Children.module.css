@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     width: 15rem;
-    height: 10rem;
+    height: 12rem;
     margin: 1rem;
     padding: 0.5rem;
     background: rgb(248, 246, 246);
@@ -17,9 +17,38 @@
     font-weight: bold;
     text-align: center;
 }
+.label_checkbox {
+    
+    font-size: 11px;
+    font-weight: bold;
+    display: inline-block;
+    margin: 0.3rem;
+}
+.label_checkbox_disabled {
+    color:rgb(177, 171, 171);
+    font-size: 11px;
+    font-weight: bold;
+    display: inline-block;
+    margin: 0.3rem;
+}
+
+.checkbox {
+    font-size: 11px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 1rem;
+}
 
 .label {
     
+    font-size: 11px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    margin: 0.3rem;
+}
+.label_disabled {
+    color: rgb(177, 171, 171);
     font-size: 11px;
     font-weight: bold;
     display: flex;
@@ -31,13 +60,6 @@
     font-size: 11px;
     display: flex;
     margin-left: 0.3rem;
-    height: auto;
-    width: 4rem;
-}
-.input {
-    font-size: 11px;
-    display: flex;
-    margin-left: 0.3rem;
-    height: auto;
+    height: 1rem;
     width: 4rem;
 }
