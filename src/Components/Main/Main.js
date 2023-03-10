@@ -7,6 +7,11 @@ import classes from "./Main.module.css";
 
 const PC_REDUCER = (state, action) => {
   switch (action.type) {
+    /* Eligible Housing */
+    case "HOUSING": {
+      return {...state, housing: action.housing};
+    }
+
     /* Additonal Amounts */
     case "ADDITIONAL": {
       return { ...state, additional: action.additional };
