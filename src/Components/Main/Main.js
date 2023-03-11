@@ -5,6 +5,7 @@ import Children from "../Children/Children";
 import PA from "../PA/PA";
 import classes from "./Main.module.css";
 import elements from "../ApplicableAmounts/AA"
+import Capital from "../Capital/Capital"
 
 const PC_REDUCER = (state, action) => {
 
@@ -139,6 +140,9 @@ const Main = (props) => {
           <Additional updateAction={dispatchReducer} />
           <Housing updateAction={dispatchReducer} />
           <Children updateAction={dispatchReducer}/>
+        </section>
+        <section>
+          <Capital/>
         </section>
 
         {/* State value display: */}
