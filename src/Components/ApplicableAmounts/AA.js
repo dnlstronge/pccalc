@@ -15,7 +15,7 @@ const AA = {
     childpost: 56.35,
     disabledChild: 30.58,
     disabledChildHigh: 95.48,
-    
+    capitaldisregard: 10000
     
 }
 export default AA;
