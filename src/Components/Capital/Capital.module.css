@@ -6,10 +6,11 @@
     width: 15rem;
     height: auto;
     margin: 1rem;
-    margin-top: 3rem;
+    margin-top: 1rem;
+    margin-left: 0rem;
     padding: 0.5rem;
     background: rgb(248, 246, 246);
-    border-radius: 5%;
+    border-radius: 5px;
     border: 2px solid black;
 }
 
