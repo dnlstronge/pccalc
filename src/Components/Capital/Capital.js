@@ -13,14 +13,18 @@ const Capital = (props) => {
     const handleCapital = (e) => {
         let actualCap = Number(e.target.value)
     if(actualCap <= capitaldisregard) { 
-        console.log("under") 
+        //console.log("under") 
         return setCapital(0)}
-    if(actualCap > capitaldisregard) { 
-        console.log("over")
-        return setCapital}
+    else if(actualCap > capitaldisregard) { 
+        //console.log("over")
+        return setCapital(actualCap - capitaldisregard)}
     
     
     }
+
+    useEffect(() => {
+        
+    }, [capital])
 
     return (
         <Fragment>
@@ -29,6 +33,8 @@ const Capital = (props) => {
                 <label className={classes.label}>
                     <input className={classes.input} onChange={handleCapital} type="number"/>
                 </label>
+                <p>Capital after disregard: £{capital.toFixed(2)}</p>
+                <p>Derived tariff income: £{tariff.toFixed(2)}pw</p>
             </div>
         </Fragment>
     )
