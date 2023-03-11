@@ -22,8 +22,16 @@ const Capital = (props) => {
     
     }
 
-    useEffect(() => {
+    /* Logic needs to handle:
+        [*] - £2 per 1,000
+        [*] - £1 per 500
+        [*] - £501 is £2 ] */
         
+    useEffect(() => {
+        let remainder = 0
+        let floored = Math.floor(capital / 500) 
+       console.log(`Remainder = ${remainder}`)
+       console.log(`floored = ${floored}`)
     }, [capital])
 
     return (
