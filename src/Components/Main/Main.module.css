@@ -1,6 +1,21 @@
 .container {
     display: flex;
     flex-direction: row;
+    margin-left: 15%;
+}
+.heading {
+    display: flex;
+    height: 5rem;
+    width: 70%;
+    background-color: antiquewhite;
+    text-align: center;
+    align-self: center;
+    font-size: 16px;
+    margin-left: 10%;
+    padding-top: 2rem;
+    padding-left: 1rem;
+    border-radius: 5px;
+    box-shadow: inset 2rem;
 }
 .statecontainer {
     font-size: 12px;

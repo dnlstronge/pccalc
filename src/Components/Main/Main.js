@@ -7,6 +7,10 @@ import classes from "./Main.module.css";
 import elements from "../ApplicableAmounts/AA"
 import Capital from "../Capital/Capital"
 
+
+const version = 1.001;
+
+
 const PC_REDUCER = (state, action) => {
 
 
@@ -134,6 +138,7 @@ const Main = (props) => {
   
   return (
     <Fragment>
+      <h2 className={classes.heading}>Pension Credit Calculator: {version} </h2>
       <div className={classes.container}>
         <section className={classes.section}>
           <PA updateAction={dispatchReducer} />
