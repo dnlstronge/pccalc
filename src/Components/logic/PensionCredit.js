@@ -76,7 +76,8 @@ const calcPensionCredit = (applicableAmount, income, stateCOUPLE) => {
        }    
   } 
    
- return console.log(`GPC: ${GPC.toFixed(2)} SC: ${SC.toFixed(2)}`)
+ console.log(`GPC: ${GPC.toFixed(2)} SC: ${SC.toFixed(2)}`)
+ return {savings: SC.toFixed(2), guaranteed: GPC.toFixed(2)}
   //return (GPC.toFixed(2) SC.toFixed(2))
   
 
