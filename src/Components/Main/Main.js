@@ -7,6 +7,7 @@ import classes from "./Main.module.css";
 import elements from "../ApplicableAmounts/AA";
 import Capital from "../Capital/Capital";
 import Award from "../Award/Award"
+import Income from "../Income/Income";
 
 const version = 1.001;
 
@@ -163,6 +164,7 @@ const Main = (props) => {
         </section>
         <section>
           <Capital updateAction={dispatchReducer} />
+          <Income updateAction={dispatchReducer}/>
           <Award updateAction={dispatchReducer} 
                  applicableamount = {applicable.TOTAL} 
                  income={applicable.TARIFF + applicable.income }
