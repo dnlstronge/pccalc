@@ -1,8 +1,11 @@
+
+import AA from "../ApplicableAmounts/AA";
+
+
+
 /*===========Penion Credit Logic & calculation==============*/
-const thresholdSingle = 158.47
-const thresholdCouple = 251.70
-const maxSC1 = 14.48 
-const maxSC2 = 16.20
+const { thresholdSingle, thresholdCouple, maxSC1, maxSC2 } = AA
+
 
 /* Args to be passed as state below*/
 
@@ -17,66 +20,69 @@ const stateOBJ = {
 maybe use helper function? */
 
 const calcPensionCredit = (applicableAmount, income, stateCOUPLE) => {
-
-    let a = applicableAmount
-    let b = income
-    let c = stateCOUPLE
-    let GPC = 0
-    let SC = 0
-    let maxSC = 0
-    
-    // SINGLE:
-    if (!c) {
-        // finds GPC
-        if(a - b > 0) { GPC = a - b}
-        
-        // finds SC
-        if((b - thresholdSingle) * 0.6 < maxSC1) 
-         { maxSC = ((b - thresholdSingle) * 0.6)
-         } else {
-           maxSC = maxSC1
-           if(maxSC > 0) {
-             SC = maxSC - ( (b - a) * 0.4 )
-             if(SC <= 0) {
-               SC = 0
-             }
-             if(SC > maxSC1) {
-               SC = maxSC1
-             }
-           } 
-         }    
-    } 
-    
-    // COUPLE: 
-    
-      if (c) {
-        // finds GPC
-        if(a - b > 0) { GPC = a - b}
-        
-        // finds SC
-        if((b - thresholdCouple) * 0.6 < maxSC2) 
-         { maxSC = ((b - thresholdCouple) * 0.6)
-         } else {
-           maxSC = maxSC2
-           if(maxSC > 0) {
-             SC = maxSC - ( (b - a) * 0.4 )
-             if(SC <= 0) {
-               SC = 0
-             }
-             if(SC > maxSC2) {
-               SC = maxSC2
-             }
+  // const thresholdSingle = 158.47
+  // const thresholdCouple = 251.70
+  // const maxSC1 = 14.48
+  // const maxSC2 = 16.20
+  let a = applicableAmount
+  let b = income
+  let c = stateCOUPLE
+  let GPC = 0
+  let SC = 0
+  let maxSC = 0
+  
+  // SINGLE:
+  if (c === "SINGLE") {
+      // finds GPC
+      if(a - b > 0) { GPC = a - b}
+      
+      // finds SC
+      if((b - thresholdSingle) * 0.6 < maxSC1) 
+       { maxSC = ((b - thresholdSingle) * 0.6)
+       } else {
+         maxSC = maxSC1
+         if(maxSC > 0) {
+           SC = maxSC - ( (b - a) * 0.4 )
+           if(SC <= 0) {
+             SC = 0
            }
-         }    
-    } 
-     
-    console.log(`GPC: ${GPC.toFixed(2)} SC: ${SC.toFixed(2)}`)
-    return GPC.toFixed(2), SC.toFixed(2)
-    
-    //update date local state in return statement via reducer or usestate
+           if(SC > maxSC1) {
+             SC = maxSC1
+           }
+         } 
+       }    
+  } 
+  
+  // COUPLE: 
+  
+    if (c === "COUPLE") {
+      // finds GPC
+      if(a - b > 0) { GPC = a - b}
+      
+      // finds SC
+      if((b - thresholdCouple) * 0.6 < maxSC2) 
+       { maxSC = ((b - thresholdCouple) * 0.6)
+       } else {
+         maxSC = maxSC2
+         if(maxSC > 0) {
+           SC = maxSC - ( (b - a) * 0.4 )
+           if(SC <= 0) {
+             SC = 0
+           }
+           if(SC > maxSC2) {
+             SC = maxSC2
+           }
+         }
+       }    
+  } 
+   
+ return console.log(`GPC: ${GPC.toFixed(2)} SC: ${SC.toFixed(2)}`)
+  //return (GPC.toFixed(2) SC.toFixed(2))
+  
+
 }
 
-
+export default calcPensionCredit;
     
 
 // test: calcPensionCredit(182.60, 200, false) (clear - functions on basis of truthy) (expected OP  = GPC: 0.00 SC: 7.52)

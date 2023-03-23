@@ -32,8 +32,7 @@ const Capital = (props) => {
         
         let remainder = capital % 500
         let floored = Math.floor(capital / 500) 
-       //console.log(`Remainder = ${remainder}`)
-       //console.log(`floored = ${floored}`)
+     
        if(remainder > 0) {
         setTariff(floored + 1)
        } else {

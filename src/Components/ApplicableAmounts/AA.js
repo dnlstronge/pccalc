@@ -15,7 +15,12 @@ const AA = {
     childpost: 56.35,
     disabledChild: 30.58,
     disabledChildHigh: 95.48,
-    capitaldisregard: 10000
+    capitaldisregard: 10000,
+    maxSC1: 14.48,
+    maxSC2: 16.20,
+    thresholdSingle: 158.47,
+    thresholdCouple: 251.70
+    
     
 }
 export default AA;
