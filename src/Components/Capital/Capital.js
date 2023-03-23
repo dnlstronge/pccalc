@@ -42,11 +42,11 @@ const Capital = ({ updateAction }) => {
 
     useEffect( () => {
         if(tariff > 0) {
-            updateAction( {type: "TARIFF", payload: tariff.toFixed(2) })
+           return updateAction( {type: "TARIFF", payload: tariff })
         }
     }, [tariff, updateAction])
 
-    
+
     return (
         <Fragment>
             <div className={classes.container}>

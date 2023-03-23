@@ -162,7 +162,7 @@ const Main = (props) => {
           <Children updateAction={dispatchReducer} />
         </section>
         <section>
-          <Capital />
+          <Capital updateAction={dispatchReducer} />
           <Award updateAction={dispatchReducer} 
                  applicableamount = {applicable.TOTAL} 
                  income={applicable.TARIFF + applicable.income }
@@ -195,6 +195,9 @@ const Main = (props) => {
           </p>
           <p className={classes.state_p}>
             total applicable amount: {applicable.TOTAL}
+          </p>
+          <p className={classes.state_p}>
+            Tariff income from savings: {applicable.TARIFF}
           </p>
         </section>
       </div>
