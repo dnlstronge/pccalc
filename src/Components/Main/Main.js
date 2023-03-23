@@ -6,12 +6,16 @@ import PA from "../PA/PA";
 import classes from "./Main.module.css";
 import elements from "../ApplicableAmounts/AA";
 import Capital from "../Capital/Capital";
+import Award from "../Award/Award"
 
 const version = 1.001;
 
 const PC_REDUCER = (state, action) => {
   switch (action.type) {
     /* finds total */
+    case "TARIFF": {
+      return {...state, TARIFF: action.payload}
+    }
 
     case "TOTAL": {
       return { ...state, TOTAL: action.payload };
@@ -106,6 +110,7 @@ const Main = (props) => {
     dislow: 0,
     dishigh: 0,
     TOTAL: 0,
+    TARIFF: 0
   });
 
   useEffect(() => {
@@ -158,6 +163,11 @@ const Main = (props) => {
         </section>
         <section>
           <Capital />
+          <Award updateAction={dispatchReducer} 
+                 applicableamount = {applicable.TOTAL} 
+                 income={applicable.TARIFF + applicable.income }
+                 couple={applicable.stateCouple}
+                 />
         </section>
 
         {/* State value display: */}

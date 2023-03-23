@@ -4,7 +4,7 @@ import elements from "../ApplicableAmounts/AA"
 
 const { capitaldisregard } = elements
 
-const Capital = (props) => {
+const Capital = ({ updateAction }) => {
 
     /*Tariff income and capital logic to follow */
 
@@ -40,6 +40,13 @@ const Capital = (props) => {
        }
     }, [capital])
 
+    useEffect( () => {
+        if(tariff > 0) {
+            updateAction( {type: "TARIFF", payload: tariff.toFixed(2) })
+        }
+    }, [tariff, updateAction])
+
+    
     return (
         <Fragment>
             <div className={classes.container}>
