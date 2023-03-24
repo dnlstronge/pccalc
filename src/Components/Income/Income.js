@@ -9,12 +9,24 @@ const Income = ({updateAction}) => {
        
         DR: 0,
         Total: 0,
+        SUM: (a, b, c, d, e, f, g, h, i, j) => {
+          return local.Total = a + b + c + d + e + f + g + h + i -j
+        }
         
     })
-    useEffect(() => {
-        local.SUM()
-    }, [local])
+   const [val_1, setVal_1] = useState(0)
+   const [val_2, setVal_2] = useState(0)
+   const [val_3, setVal_3] = useState(0)
+   const [val_4, setVal_4] = useState(0)
+   const [val_5, setVal_5] = useState(0)
+   const [val_6, setVal_6] = useState(0)
+   const [val_7, setVal_7] = useState(0)
+   const [val_8, setVal_8] = useState(0)
+   const [val_9, setVal_9] = useState(0)
 
+   useEffect(() => {
+    setLocal({...local, Total: local.SUM(val_1, val_2, val_3, val_4, val_5, val_6, val_7, val_8, val_9, local.DR)})
+   }, [val_1, val_2, val_3, val_4, val_5, val_6, val_7, val_8, val_9, local.DR, local])
 
     const disregardHandler = (e) => {
         setLocal({...local, DR: Number(e.target.value)})
@@ -32,7 +44,7 @@ const Income = ({updateAction}) => {
                         <option value="20">Disability</option>
                     </select>
                 </label>
-                <IncomeSelect updateArray={local.arrayMethod} id="a" localState={local} updateState={setLocal}/>
+                <IncomeSelect id="a" localState={local} updateState={setVal_1}/>
                 <div>Testing Total {local.Total}</div>
             </div>
         </React.Fragment>
