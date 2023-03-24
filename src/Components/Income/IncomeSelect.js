@@ -53,8 +53,8 @@ const IncomeSelect = ({id, localState, updateState}) => {
                     <option value="Wages (partner)"></option>
                     <option value="Other"></option>
                 </select>
-                <input className={classes.input} type="number"></input>
-                <select>
+                <input  onChange={handleAmount} className={classes.input} type="number"></input>
+                <select onChange={handleFreq}>
                     <option value="N">--select</option>
                     <option value="W">Weekly</option>
                     <option value="M">Monthly</option>
