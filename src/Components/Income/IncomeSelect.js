@@ -15,7 +15,6 @@ const IncomeSelect = (props) => {
                     <option value=""></option>
                     <option value=""></option>
                     <option value=""></option>
-                    
                 </select>
                 </label>
             </div>

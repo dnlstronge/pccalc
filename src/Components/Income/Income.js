@@ -11,8 +11,19 @@ const Income = ({updateAction}) => {
         c: 0,
         d: 0,
         e: 0,
-        DR: 0
+        DR: 0,
+        Total: 0,
+        SUM: () => {
+            let partTotal = 
+                local.a+local.b+local.c+local.d+local.e-local.DR
+                if(partTotal > 0) {
+                    setLocal({...local, Total: partTotal})
+                }
+        }
     })
+    useEffect(() => {
+        local.SUM()
+    }, [local])
 
 
     const disregardHandler = (e) => {
