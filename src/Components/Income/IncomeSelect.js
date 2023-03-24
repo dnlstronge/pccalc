@@ -53,9 +53,9 @@ const IncomeSelect = ({ id, updateArray, localState, updateState }) => {
     <React.Fragment>
       <div className={classes.container}>
         <label className={classes.label} htmlFor="selectselect">
-          Enter Income
+         
           <select className={classes.select} id="selectselect">
-            <option value="--select--">--select--</option>
+            <option value="--select--">--Select Income--</option>
             <option value="State Pension">State Pension</option>
             <option value="State Pension (partner)">
               State Pension (partner)
@@ -77,8 +77,8 @@ const IncomeSelect = ({ id, updateArray, localState, updateState }) => {
             className={classes.input}
             type="number"
           ></input>
-          <select onChange={handleFreq}>
-            <option value="N">--select</option>
+          <select className={classes.selectFreq} onChange={handleFreq}>
+            <option value="N">--frequency--</option>
             <option value="W">Weekly</option>
             <option value="M">Monthly</option>
             <option value="Q">Quarterly</option>
