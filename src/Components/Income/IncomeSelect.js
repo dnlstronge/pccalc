@@ -16,7 +16,24 @@ const IncomeSelect = ({id, localState, updateState}) => {
         setIncomeLocal({...incomeLocal, freq: e.target.value})
     }
 
-    
+    useEffect(() => {
+        let a = incomeLocal.value
+        let b = incomeLocal.freq
+        if(b === "W") {
+            setIncomeLocal({...incomeLocal, actual: a})
+        }
+        if(b === "M") {
+            setIncomeLocal({...incomeLocal, actual: (a * 12) / 52})
+        }
+        if(b === "Q") {
+            setIncomeLocal({...incomeLocal, actual: (a * 4) / 52})
+        }
+        if(b === "Y") {
+            setIncomeLocal({...incomeLocal, actual: a / 52})
+        }
+
+        
+    }, [incomeLocal.value, incomeLocal.freq, incomeLocal.actual, setIncomeLocal, incomeLocal])
 
 
 
