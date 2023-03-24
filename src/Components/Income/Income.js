@@ -17,7 +17,7 @@ const Income = ({updateAction}) => {
             let partTotal = 
                 local.a+local.b+local.c+local.d+local.e-local.DR
                 if(partTotal > 0) {
-                    setLocal({...local, Total: partTotal})
+                   return setLocal({...local, Total: partTotal})
                 }
         }
     })
@@ -42,6 +42,8 @@ const Income = ({updateAction}) => {
                         <option value="20">Disability</option>
                     </select>
                 </label>
+                <IncomeSelect id="a" localState={local} updateState={setLocal}/>
+                <div>Testing Total {local.Total}</div>
             </div>
         </React.Fragment>
     )
