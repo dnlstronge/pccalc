@@ -85,7 +85,7 @@ const IncomeSelect = ({ id, updateArray, localState, updateState }) => {
             <option value="Y">Yearly</option>
           </select>
         </label>
-        <div>TESTING: Actual = {incomeLocal.actual.toFixed(2)}</div>
+        
       </div>
     </React.Fragment>
   );
