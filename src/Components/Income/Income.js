@@ -10,7 +10,7 @@ const Income = ({updateAction}) => {
         DR: 0,
         Total: 0,
         SUM: (a, b, c, d, e, f, g, h, i, j) => {
-          return local.Total = a + b + c + d + e + f + g + h + i -j
+          return a + b + c + d + e + f + g + h + i -j
         }
         
     })
