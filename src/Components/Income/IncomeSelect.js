@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import classes from "./IncomeSelect.module.css";
 
-const IncomeSelect = ({ id, localState, updateState }) => {
+const IncomeSelect = ({ id, updateArray, localState, updateState }) => {
   const [incomeLocal, setIncomeLocal] = useState({
     value: 0,
     freq: "",
@@ -42,15 +42,17 @@ const IncomeSelect = ({ id, localState, updateState }) => {
   // lift to state:
 
   useEffect(() => {
-    if (incomeLocal.actual > 0) {
+    
+    let val = incomeLocal.actual.toFixed(2)
+    if (val > 0) {
+       
     }
-  }, [incomeLocal.actual, id, localState, updateState]);
+  }, [incomeLocal.actual, id, updateState ]);
 
   return (
     <React.Fragment>
       <div className={classes.container}>
         <label className={classes.label} htmlFor="selectselect">
-          {" "}
           Enter Income
           <select className={classes.select} id="selectselect">
             <option value="--select--">--select--</option>

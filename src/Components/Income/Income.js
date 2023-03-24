@@ -6,20 +6,10 @@ import IncomeSelect from "./IncomeSelect.js"
 const Income = ({updateAction}) => {
 
     const [local, setLocal ] = useState({
-        a: 0,
-        b: 0,
-        c: 0,
-        d: 0,
-        e: 0,
+       
         DR: 0,
         Total: 0,
-        SUM: () => {
-            let partTotal = 
-                local.a+local.b+local.c+local.d+local.e-local.DR
-                if(partTotal > 0) {
-                   return setLocal({...local, Total: partTotal})
-                }
-        }
+        
     })
     useEffect(() => {
         local.SUM()
@@ -42,7 +32,7 @@ const Income = ({updateAction}) => {
                         <option value="20">Disability</option>
                     </select>
                 </label>
-                <IncomeSelect id="a" localState={local} updateState={setLocal}/>
+                <IncomeSelect updateArray={local.arrayMethod} id="a" localState={local} updateState={setLocal}/>
                 <div>Testing Total {local.Total}</div>
             </div>
         </React.Fragment>
