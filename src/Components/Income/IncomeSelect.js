@@ -45,7 +45,7 @@ const IncomeSelect = ({ id, updateArray, localState, updateState }) => {
     
     let val = incomeLocal.actual.toFixed(2)
     if (val > 0) {
-       
+       updateState(val)
     }
   }, [incomeLocal.actual, id, updateState ]);
 
