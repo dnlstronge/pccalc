@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import classes from "./Income.module.css";
 import IncomeSelect from "./IncomeSelect.js";
 
+
+
 const Income = ({ updateAction }) => {
   const [local, setLocal] = useState(0);
   const [val_1, setVal_1] = useState({value: 0});
@@ -13,6 +15,10 @@ const Income = ({ updateAction }) => {
   // const [val_7, setVal_7] = useState(0);
   // const [val_8, setVal_8] = useState(0);
   // const [val_9, setVal_9] = useState(0);
+
+
+  /* Need to work on total income, this needs to go to parent for
+  use in logic to calculate */
 
   useEffect(() => {
  setLocal(val_1.value + val_2.value)
