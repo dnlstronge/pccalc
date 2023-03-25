@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import classes from "./Income.module.css";
 import IncomeSelect from "./IncomeSelect.js";
 
@@ -7,23 +7,20 @@ const Income = ({ updateAction }) => {
     DR: 0,
     Total: 0,
   });
-  const [val_1, setVal_1] = useState(0);
-  const [val_2, setVal_2] = useState(0);
-  const [val_3, setVal_3] = useState(0);
-  const [val_4, setVal_4] = useState(0);
-  const [val_5, setVal_5] = useState(0);
-  const [val_6, setVal_6] = useState(0);
-  const [val_7, setVal_7] = useState(0);
-  const [val_8, setVal_8] = useState(0);
-  const [val_9, setVal_9] = useState(0);
+  const [val_1, setVal_1] = useState({value: 0});
+  const [val_2, setVal_2] = useState({value: 0});
+  const [val_3, setVal_3] = useState({value: 0});
+  // const [val_4, setVal_4] = useState(0);
+  // const [val_5, setVal_5] = useState(0);
+  // const [val_6, setVal_6] = useState(0);
+  // const [val_7, setVal_7] = useState(0);
+  // const [val_8, setVal_8] = useState(0);
+  // const [val_9, setVal_9] = useState(0);
 
   useEffect(() => {
-    let a = val_1
-    let b = val_2
-    let c = val_3
-    if(a + b + c > 0) {
-    return console.log("bananas")}
-  }, [val_1, val_2, val_3])
+   return setLocal({...local, Total: val_1.value + val_2.value})
+  
+  }, [val_1.value, val_2.value, local, setLocal])
 
   const disregardHandler = (e) => {
     setLocal({ ...local, DR: Number(e.target.value) });
