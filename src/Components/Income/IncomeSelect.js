@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { markAsUntransferable } from "worker_threads";
 import classes from "./IncomeSelect.module.css";
 
 const IncomeSelect = ({ updateState }) => {
