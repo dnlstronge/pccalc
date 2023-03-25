@@ -18,39 +18,8 @@ const Income = ({ updateAction }) => {
   const [val_9, setVal_9] = useState(0);
 
   useEffect(() => {
-    
-      console.log(typeof val_1)
-    setLocal({
-      ...local,
-      Total: 
-        +val_1
-        +val_2
-        +val_3
-        +val_4
-        +val_5
-        +val_6
-        +val_7
-        +val_8
-        +val_9
-        -local.DR } 
-      )
-      if(local.Total > 0) {
-        return;
-      }
-    ;
-  }, [
-    val_1,
-    val_2,
-    val_3,
-    val_4,
-    val_5,
-    val_6,
-    val_7,
-    val_8,
-    val_9,
-    local.DR,
-    local,
-  ]);
+    console.log(val_1 + val_2 + val_3 + val_4+ val_5+ val_6+ val_7+ val_8+ val_9 - local.DR)
+  }, [val_1, val_2, val_3, val_4, val_5, val_6, val_7, val_8, val_9, local.DR])
 
   const disregardHandler = (e) => {
     setLocal({ ...local, DR: Number(e.target.value) });
