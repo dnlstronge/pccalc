@@ -10,6 +10,10 @@
     background: rgb(248, 246, 246);
     border-radius: 5%;
     border: 2px solid black;
+    transition: transform .2s; /* Animation */
+}
+.container:hover { 
+    transform: scale(1.2);
 }
 
 .heading {
