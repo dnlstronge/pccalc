@@ -18,7 +18,7 @@ const IncomeSelect = ({ updateState }) => {
   };
 
 
-  /* the following code was causing problems */
+  /* fixed this had previously been causing inf loop */
   useEffect(() => {
     let a = incomeLocal.value;
     let b = incomeLocal.freq;
