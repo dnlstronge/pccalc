@@ -19,7 +19,7 @@ const IncomeSelect = ({ updateState }) => {
   };
 
 
-  /* the following code is causing problems */
+  /* the following code was causing problems */
   useEffect(() => {
     let a = incomeLocal.value;
     let b = incomeLocal.freq;
@@ -41,22 +41,20 @@ const IncomeSelect = ({ updateState }) => {
   }, [
     incomeLocal.value,
     incomeLocal.freq,
-    incomeLocal.actual,
-    setIncomeLocal,
-    incomeLocal,
+    setActual
   ]);
 
   // lift to state:
 
   useEffect(() => {
     
-    let val = incomeLocal.actual.toFixed(2)
+    let val = Number(actual)
     if (val > 0) {
-       return updateState({value: Number(val)})
+       return updateState({value: val})
     } else {
     return }
 
-  }, [incomeLocal.actual, updateState ]);
+  }, [actual, updateState ]);
 
   return (
     <React.Fragment>
