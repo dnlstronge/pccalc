@@ -20,17 +20,18 @@ const IncomeSelect = ({ updateState }) => {
     let a = incomeLocal.value;
     let b = incomeLocal.freq;
     if (b === "W") {
-      setIncomeLocal({ ...incomeLocal, actual: a });
+      return setIncomeLocal({ ...incomeLocal, actual: a });
     }
     if (b === "M") {
-      setIncomeLocal({ ...incomeLocal, actual: (a * 12) / 52 });
+     return setIncomeLocal({ ...incomeLocal, actual: (a * 12) / 52 });
     }
     if (b === "Q") {
-      setIncomeLocal({ ...incomeLocal, actual: (a * 4) / 52 });
+     return setIncomeLocal({ ...incomeLocal, actual: (a * 4) / 52 });
     }
     if (b === "Y") {
-      setIncomeLocal({ ...incomeLocal, actual: a / 52 });
+     return setIncomeLocal({ ...incomeLocal, actual: a / 52 });
     }
+    return
   }, [
     incomeLocal.value,
     incomeLocal.freq,
@@ -45,8 +46,10 @@ const IncomeSelect = ({ updateState }) => {
     
     let val = incomeLocal.actual.toFixed(2)
     if (val > 0) {
-       updateState({value: Number(val)})
-    }
+       return updateState({value: Number(val)})
+    } 
+    return
+
   }, [incomeLocal.actual, updateState ]);
 
   return (

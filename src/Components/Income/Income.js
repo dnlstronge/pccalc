@@ -3,10 +3,7 @@ import classes from "./Income.module.css";
 import IncomeSelect from "./IncomeSelect.js";
 
 const Income = ({ updateAction }) => {
-  const [local, setLocal] = useState({
-    DR: 0,
-    Total: 0,
-  });
+  const [local, setLocal] = useState(0);
   const [val_1, setVal_1] = useState({value: 0});
   const [val_2, setVal_2] = useState({value: 0});
   const [val_3, setVal_3] = useState({value: 0});
@@ -18,9 +15,9 @@ const Income = ({ updateAction }) => {
   // const [val_9, setVal_9] = useState(0);
 
   useEffect(() => {
-   return setLocal({...local, Total: val_1.value + val_2.value})
+ setLocal(val_1.value + val_2.value)
   
-  }, [val_1.value, val_2.value, local, setLocal])
+  }, [val_1.value, val_2.value, setLocal])
 
   const disregardHandler = (e) => {
     setLocal({ ...local, DR: Number(e.target.value) });
