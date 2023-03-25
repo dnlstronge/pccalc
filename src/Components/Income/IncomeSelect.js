@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import classes from "./IncomeSelect.module.css";
 
-const IncomeSelect = ({ id, updateArray, localState, updateState }) => {
+const IncomeSelect = ({ updateState }) => {
   const [incomeLocal, setIncomeLocal] = useState({
     value: 0,
     freq: "",
@@ -47,7 +47,7 @@ const IncomeSelect = ({ id, updateArray, localState, updateState }) => {
     if (val > 0) {
        updateState(val)
     }
-  }, [incomeLocal.actual, id, updateState ]);
+  }, [incomeLocal.actual, updateState ]);
 
   return (
     <React.Fragment>
