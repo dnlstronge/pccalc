@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { markAsUntransferable } from "worker_threads";
 import classes from "./IncomeSelect.module.css";
 
 const IncomeSelect = ({ updateState }) => {
   const [incomeLocal, setIncomeLocal] = useState({
     value: 0,
     freq: "",
-    actual: 0,
+    
   });
+  const [actual, setActual] = useState(0)
 
   const handleAmount = (e) => {
     setIncomeLocal({ ...incomeLocal, value: Number(e.target.value) });
@@ -16,20 +18,22 @@ const IncomeSelect = ({ updateState }) => {
     setIncomeLocal({ ...incomeLocal, freq: e.target.value });
   };
 
+
+  /* the following code is causing problems */
   useEffect(() => {
     let a = incomeLocal.value;
     let b = incomeLocal.freq;
     if (b === "W") {
-      return setIncomeLocal({ ...incomeLocal, actual: a });
+      return setActual(a)
     }
     if (b === "M") {
-     return setIncomeLocal({ ...incomeLocal, actual: (a * 12) / 52 });
+     return setActual((a * 12) / 12)
     }
     if (b === "Q") {
-     return setIncomeLocal({ ...incomeLocal, actual: (a * 4) / 52 });
+     return setActual((a * 4) / 52 )
     }
     if (b === "Y") {
-     return setIncomeLocal({ ...incomeLocal, actual: a / 52 });
+     return setActual(a / 52)
     } else {
         return;
     }
