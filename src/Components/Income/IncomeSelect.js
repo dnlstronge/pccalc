@@ -31,7 +31,7 @@ const IncomeSelect = ({ updateState }) => {
     if (b === "Y") {
      return setIncomeLocal({ ...incomeLocal, actual: a / 52 });
     } else {
-        return
+        return;
     }
   
   }, [
