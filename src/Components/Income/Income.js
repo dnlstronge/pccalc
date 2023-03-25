@@ -18,8 +18,12 @@ const Income = ({ updateAction }) => {
   const [val_9, setVal_9] = useState(0);
 
   useEffect(() => {
-    console.log()
-  }, [])
+    let a = val_1
+    let b = val_2
+    let c = val_3
+    if(a + b + c > 0) {
+    return console.log("bananas")}
+  }, [val_1, val_2, val_3])
 
   const disregardHandler = (e) => {
     setLocal({ ...local, DR: Number(e.target.value) });
@@ -28,7 +32,7 @@ const Income = ({ updateAction }) => {
     <React.Fragment>
       <div className={classes.container}>
         <h4 className={classes.heading}>Income</h4>
-        <label htmlfor="EDselect" className={classes.label}>
+        <label htmlFor="EDselect" className={classes.label}>
           Earnings Disregard
           <select
             onChange={disregardHandler}
