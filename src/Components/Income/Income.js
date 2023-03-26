@@ -68,10 +68,6 @@ const Income = ({ updateAction }) => {
         <IncomeSelect updateState={setVal_1} />
         <IncomeSelect updateState={setVal_2} />
         <IncomeSelect updateState={setVal_3} />
-        <div>
-          Testing Total a = {val_1} : b = {val_2}
-        </div>
-        <div>Testing Total2 = {TOTAL} </div>
       </div>
     </React.Fragment>
   );
