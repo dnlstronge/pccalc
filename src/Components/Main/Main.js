@@ -6,21 +6,21 @@ import PA from "../PA/PA";
 import classes from "./Main.module.css";
 import elements from "../ApplicableAmounts/AA";
 import Capital from "../Capital/Capital";
-import Award from "../Award/Award"
+import Award from "../Award/Award";
 import Income from "../Income/Income";
 
 const version = 1.001;
 
 const PC_REDUCER = (state, action) => {
   switch (action.type) {
-    /*finds total income + tariff */
+    /* state for total income + tariff */
     case "INCOME": {
-      return {...state, income: action.payload}
+      return { ...state, income: action.payload };
     }
     case "TARIFF": {
-      return {...state, TARIFF: action.payload}
+      return { ...state, TARIFF: action.payload };
     }
-    /* finds total for applicable amount */
+    /* state for  total for applicable amount */
     case "TOTAL": {
       return { ...state, TOTAL: action.payload };
     }
@@ -103,7 +103,7 @@ const PC_REDUCER = (state, action) => {
 const Main = (props) => {
   const [applicable, dispatchReducer] = useReducer(PC_REDUCER, {
     applicableAmount: 0,
-    
+
     additional: 0,
     couple_value: 0,
     savingsCredit: 0,
@@ -115,7 +115,7 @@ const Main = (props) => {
     dishigh: 0,
     TOTAL: 0,
     TARIFF: 0,
-    income: 0
+    income: 0,
   });
 
   useEffect(() => {
@@ -168,12 +168,13 @@ const Main = (props) => {
         </section>
         <section>
           <Capital updateAction={dispatchReducer} />
-          <Income updateAction={dispatchReducer}/>
-          <Award updateAction={dispatchReducer} 
-                 applicableamount = {applicable.TOTAL} 
-                 income={applicable.TARIFF + applicable.income }
-                 couple={applicable.stateCouple}
-                 />
+          <Income updateAction={dispatchReducer} />
+          <Award
+            updateAction={dispatchReducer}
+            applicableamount={applicable.TOTAL}
+            income={applicable.TARIFF + applicable.income}
+            couple={applicable.stateCouple}
+          />
         </section>
 
         {/* State value display: */}
