@@ -1,11 +1,13 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import classes from "./Income.module.css";
 import IncomeSelect from "./IncomeSelect.js";
 
 
-
 const Income = ({ updateAction }) => {
-  const [local, setLocal] = useState(0);
+  const [local, setLocal] = useState({
+    DR: 0,
+    Total: 0
+  });
   const [val_1, setVal_1] = useState({value: 0});
   const [val_2, setVal_2] = useState({value: 0});
   const [val_3, setVal_3] = useState({value: 0});
@@ -21,7 +23,7 @@ const Income = ({ updateAction }) => {
   use in logic to calculate */
 
   useEffect(() => {
- setLocal(val_1.value + val_2.value)
+ setLocal({...local, total: 0})
   
   }, [val_1.value, val_2.value, setLocal])
 
