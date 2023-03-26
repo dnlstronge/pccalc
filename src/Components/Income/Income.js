@@ -20,17 +20,28 @@ const Income = ({ updateAction }) => {
   // const [val_8, setVal_8] = useState(0);
   // const [val_9, setVal_9] = useState(0);
 
-  /* Need to work on total income, this needs to go to parent for
-  use in logic to calculate */
+ 
 
+
+  /* handles total sum locally */
   useEffect(() => {
     let a = val_1
     let b = val_2
     let c = val_3
-
-     setTOTAL(a + b + c - local.DR)},
+    let DR = local.DR
+    let SUM = a + b + c - DR
+     setTOTAL(SUM)},
     [val_1, val_2, val_3, local.DR,  setTOTAL]
   );
+
+  /* lifts sum total up to parent state */
+  useEffect(() => {
+    if(TOTAL > 0) {
+     return updateAction({
+        type: "INCOME", payload: TOTAL
+      })
+    }
+  }, [TOTAL, updateAction])
 
   const disregardHandler = (e) => {
     setLocal({ ...local, DR: Number(e.target.value) });
