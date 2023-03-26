@@ -13,11 +13,14 @@ const version = 1.001;
 
 const PC_REDUCER = (state, action) => {
   switch (action.type) {
-    /* finds total */
+    /*finds total income + tariff */
+    case "INCOME": {
+      return {...state, income: action.payload}
+    }
     case "TARIFF": {
       return {...state, TARIFF: action.payload}
     }
-
+    /* finds total for applicable amount */
     case "TOTAL": {
       return { ...state, TOTAL: action.payload };
     }
@@ -100,7 +103,7 @@ const PC_REDUCER = (state, action) => {
 const Main = (props) => {
   const [applicable, dispatchReducer] = useReducer(PC_REDUCER, {
     applicableAmount: 0,
-    income: 0,
+    
     additional: 0,
     couple_value: 0,
     savingsCredit: 0,
@@ -111,7 +114,8 @@ const Main = (props) => {
     dislow: 0,
     dishigh: 0,
     TOTAL: 0,
-    TARIFF: 0
+    TARIFF: 0,
+    income: 0
   });
 
   useEffect(() => {
