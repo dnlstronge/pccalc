@@ -45,7 +45,7 @@ const IncomeSelect = ({ updateState }) => {
 
   useEffect(() => {
     
-    let val = Number(actual)
+    let val = Number(actual.toFixed(2))
     if (val > 0) {
        return updateState(val)
     } 

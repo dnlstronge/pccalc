@@ -23,11 +23,12 @@ const Income = ({ updateAction }) => {
   /* Need to work on total income, this needs to go to parent for
   use in logic to calculate */
 
-  useEffect( () => {
-    let a = val_1.toFixed(2)
-    let b = val_2.toFixed(2)
-    let c = val_3.toFixed(2)
-    setTOTAL(a + b + c - local.DR)},
+  useEffect(() => {
+    let a = val_1
+    let b = val_2
+    let c = val_3
+
+     setTOTAL(a + b + c - local.DR)},
     [val_1, val_2, val_3, local.DR,  setTOTAL]
   );
 
