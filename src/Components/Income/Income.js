@@ -8,9 +8,9 @@ const Income = ({ updateAction }) => {
     DR: 0,
     Total: 0
   });
-  const [val_1, setVal_1] = useState({value: 0});
-  const [val_2, setVal_2] = useState({value: 0});
-  const [val_3, setVal_3] = useState({value: 0});
+  const [val_1, setVal_1] = useState(0);
+  const [val_2, setVal_2] = useState(0);
+  const [val_3, setVal_3] = useState(0);
   // const [val_4, setVal_4] = useState(0);
   // const [val_5, setVal_5] = useState(0);
   // const [val_6, setVal_6] = useState(0);
@@ -23,9 +23,9 @@ const Income = ({ updateAction }) => {
   use in logic to calculate */
 
   useEffect(() => {
- setLocal({...local, total: 0})
+ setLocal({...local, total: val_1 + val_2})
   
-  }, [val_1.value, val_2.value, setLocal])
+  }, [val_1, val_2, local, setLocal])
 
   const disregardHandler = (e) => {
     setLocal({ ...local, DR: Number(e.target.value) });
