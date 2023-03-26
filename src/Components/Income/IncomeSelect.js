@@ -23,11 +23,10 @@ const IncomeSelect = ({ updateState }) => {
     let a = incomeLocal.value;
     let b = incomeLocal.freq;
     if (b === "W") {
-      console.log("bananas")
       return setActual(a)
     }
     if (b === "M") {
-     return setActual((a * 12) / 12)
+     return setActual((a * 12) / 52)
     }
     if (b === "Q") {
      return setActual((a * 4) / 52 )
