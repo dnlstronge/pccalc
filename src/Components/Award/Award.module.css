@@ -1,0 +1,25 @@
+.container {
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    height: auto;
+    margin: 1rem;
+    margin-left: 0rem;
+    padding: 0.5rem;
+    background: rgb(248, 246, 246);
+    border-radius: 10px;
+    border: 2px solid black;
+    transition: transform .2s; /* Animation */
+}
+
+.container:hover { 
+    transform: scale(1.2);
+}
+
+.heading {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+}
