@@ -23,11 +23,9 @@ const Income = ({ updateAction }) => {
   /* Need to work on total income, this needs to go to parent for
   use in logic to calculate */
 
-  useEffect(
-    (local) => {
-      setLocal({ ...local, total: val_1 + val_2 });
-    },
-    [val_1, val_2, setLocal]
+  useEffect( () => {
+    setTOTAL(val_1 + val_2)},
+    [val_1, val_2, local.DR,  setTOTAL]
   );
 
   const disregardHandler = (e) => {
@@ -58,7 +56,7 @@ const Income = ({ updateAction }) => {
         <div>
           Testing Total a = {val_1} : b = {val_2}
         </div>
-        <div>Testing Total2 = {local.Total} </div>
+        <div>Testing Total2 = {TOTAL} </div>
       </div>
     </React.Fragment>
   );
