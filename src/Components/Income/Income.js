@@ -22,10 +22,10 @@ const Income = ({ updateAction }) => {
   /* Need to work on total income, this needs to go to parent for
   use in logic to calculate */
 
-  useEffect(() => {
+  useEffect((local) => {
  setLocal({...local, total: val_1 + val_2})
   
-  }, [val_1, val_2, local, setLocal])
+  }, [val_1, val_2, setLocal])
 
   const disregardHandler = (e) => {
     setLocal({ ...local, DR: Number(e.target.value) });
