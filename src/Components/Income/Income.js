@@ -6,8 +6,11 @@ import IncomeSelect from "./IncomeSelect.js";
 const Income = ({ updateAction }) => {
   const [local, setLocal] = useState({
     DR: 0,
-    Total: 0
   });
+  const [TOTAL, setTOTAL] = useState(0)
+
+  /* from each individual component */
+  
   const [val_1, setVal_1] = useState(0);
   const [val_2, setVal_2] = useState(0);
   const [val_3, setVal_3] = useState(0);
@@ -51,7 +54,8 @@ const Income = ({ updateAction }) => {
         <IncomeSelect updateState={setVal_1} />
         <IncomeSelect updateState={setVal_2} />
         <IncomeSelect updateState={setVal_3} />
-        <div>Testing Totala1 a = {val_1} : b = {val_2}</div>
+        <div>Testing Total a = {val_1} : b = {val_2}</div>
+        <div>Testing Total2 = {local.Total} </div>
       </div>
     </React.Fragment>
   );
