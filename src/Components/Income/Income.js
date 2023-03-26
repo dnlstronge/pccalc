@@ -2,15 +2,14 @@ import React, { useState, useEffect } from "react";
 import classes from "./Income.module.css";
 import IncomeSelect from "./IncomeSelect.js";
 
-
 const Income = ({ updateAction }) => {
   const [local, setLocal] = useState({
     DR: 0,
   });
-  const [TOTAL, setTOTAL] = useState(0)
+  const [TOTAL, setTOTAL] = useState(0);
 
   /* from each individual component */
-  
+
   const [val_1, setVal_1] = useState(0);
   const [val_2, setVal_2] = useState(0);
   const [val_3, setVal_3] = useState(0);
@@ -21,18 +20,20 @@ const Income = ({ updateAction }) => {
   // const [val_8, setVal_8] = useState(0);
   // const [val_9, setVal_9] = useState(0);
 
-
   /* Need to work on total income, this needs to go to parent for
   use in logic to calculate */
 
-  useEffect((local) => {
- setLocal({...local, total: val_1 + val_2})
-  
-  }, [val_1, val_2, setLocal])
+  useEffect(
+    (local) => {
+      setLocal({ ...local, total: val_1 + val_2 });
+    },
+    [val_1, val_2, setLocal]
+  );
 
   const disregardHandler = (e) => {
     setLocal({ ...local, DR: Number(e.target.value) });
   };
+
   return (
     <React.Fragment>
       <div className={classes.container}>
@@ -54,7 +55,9 @@ const Income = ({ updateAction }) => {
         <IncomeSelect updateState={setVal_1} />
         <IncomeSelect updateState={setVal_2} />
         <IncomeSelect updateState={setVal_3} />
-        <div>Testing Total a = {val_1} : b = {val_2}</div>
+        <div>
+          Testing Total a = {val_1} : b = {val_2}
+        </div>
         <div>Testing Total2 = {local.Total} </div>
       </div>
     </React.Fragment>
