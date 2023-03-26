@@ -24,8 +24,11 @@ const Income = ({ updateAction }) => {
   use in logic to calculate */
 
   useEffect( () => {
-    setTOTAL(val_1 + val_2 - local.DR)},
-    [val_1, val_2, local.DR,  setTOTAL]
+    let a = val_1.toFixed(2)
+    let b = val_2.toFixed(2)
+    let c = val_3.toFixed(2)
+    setTOTAL(a + b + c - local.DR)},
+    [val_1, val_2, val_3, local.DR,  setTOTAL]
   );
 
   const disregardHandler = (e) => {
