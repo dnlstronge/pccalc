@@ -24,7 +24,7 @@ const Income = ({ updateAction }) => {
   use in logic to calculate */
 
   useEffect( () => {
-    setTOTAL(val_1 + val_2)},
+    setTOTAL(val_1 + val_2 - local.DR)},
     [val_1, val_2, local.DR,  setTOTAL]
   );
 
