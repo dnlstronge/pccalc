@@ -37,7 +37,7 @@ const Income = ({ updateAction }) => {
     let DR = local.DR
     let SUM = a + b + c +d +e +f +g +h +i - DR
      setTOTAL(SUM)},
-    [val_1, val_2, val_3, local.DR,  setTOTAL]
+    [val_1, val_2, val_3, val_4, val_5, val_6, val_7, val_8, val_9, local.DR,  setTOTAL]
   );
 
   /* lifts sum total up to parent state */
