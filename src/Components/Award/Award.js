@@ -24,8 +24,8 @@ const Award = ({
     return (
         <React.Fragment>
             <div className={classes.container}>
-               <p>Savings Credit awarded: {SC}</p>
-               <p>Guaranteed Credit awarded {GPC}</p>
+               <p>Savings Credit Award =  £{SC}</p>
+               <p>Guaranteed Credit Award = £{GPC}</p>
             </div>
             
         </React.Fragment>
