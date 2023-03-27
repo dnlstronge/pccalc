@@ -159,24 +159,27 @@ const Main = (props) => {
   return (
     <Fragment>
       <h2 className={classes.heading}>Pension Credit Calculator: {version} </h2>
+      <section className={classes.wrapper}>
       <div className={classes.container}>
         <section className={classes.section}>
           <PA updateAction={dispatchReducer} />
           <Additional updateAction={dispatchReducer} />
           <Housing updateAction={dispatchReducer} />
           <Children updateAction={dispatchReducer} />
-          <Award
-            updateAction={dispatchReducer}
-            applicableamount={applicable.TOTAL}
-            income={applicable.TARIFF + applicable.income}
-            couple={applicable.stateCouple}
-          />
+          
         </section>
         <section>
           <Capital updateAction={dispatchReducer} />
           <Income updateAction={dispatchReducer} />
         </section>
       </div>
+      <Award
+            updateAction={dispatchReducer}
+            applicableamount={applicable.TOTAL}
+            income={applicable.TARIFF + applicable.income}
+            couple={applicable.stateCouple}
+          />
+      </section>
     </Fragment>
   );
 };

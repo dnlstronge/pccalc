@@ -1,3 +1,10 @@
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+   
+}
+
 .container {
     display: flex;
     flex-direction: row;
@@ -17,18 +24,4 @@
     border-radius: 5px;
     box-shadow: inset 2rem;
 }
-.statecontainer {
-    font-size: 12px;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    display: flex;
-    flex-direction: column;
-    height: 25rem;
-    width: 10rem;
-    background-color: antiquewhite;
-    border-radius: 5%;
-    margin-top: 3rem;
-    margin-left: 3rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
+

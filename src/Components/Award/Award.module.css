@@ -3,10 +3,10 @@
     font-weight: bold;
     display: flex;
     flex-direction: column;
-    width: 20rem;
+    width: 38rem;
     height: auto;
     margin: 1rem;
-    margin-left: 0rem;
+    margin-left: 15%;
     padding: 0.5rem;
     background: rgb(248, 246, 246);
     border-radius: 10px;
