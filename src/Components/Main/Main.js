@@ -165,10 +165,6 @@ const Main = (props) => {
           <Additional updateAction={dispatchReducer} />
           <Housing updateAction={dispatchReducer} />
           <Children updateAction={dispatchReducer} />
-        </section>
-        <section>
-          <Capital updateAction={dispatchReducer} />
-          <Income updateAction={dispatchReducer} />
           <Award
             updateAction={dispatchReducer}
             applicableamount={applicable.TOTAL}
@@ -176,36 +172,9 @@ const Main = (props) => {
             couple={applicable.stateCouple}
           />
         </section>
-
-        {/* State value display: */}
-
-        <section className={classes.statecontainer}>
-          <p className={classes.state_p}>
-            Personal amount: {applicable.couple_value}
-          </p>
-          <p className={classes.state_p}>Income: {applicable.income}</p>
-          <p className={classes.state_p}>Is couple: {applicable.stateCouple}</p>
-          <p className={classes.state_p}>Claim Type: {applicable.claimType}</p>
-          <p className={classes.state_p}>
-            Savings Credit Threshold: {applicable.savingsCredit}
-          </p>
-          <p className={classes.state_p}>
-            Additional Amounts: {applicable.additional.toFixed(2)}
-          </p>
-          <p className={classes.state_p}>
-            Eligible Housing: {applicable.housing}
-          </p>
-          <p className={classes.state_p}>Dependents: {applicable.dependents}</p>
-          <p className={classes.state_p}>
-            Child disablity:{" "}
-            {(applicable.dislow + applicable.dishigh).toFixed(2)}
-          </p>
-          <p className={classes.state_p}>
-            total applicable amount: {applicable.TOTAL}
-          </p>
-          <p className={classes.state_p}>
-            Tariff income from savings: {applicable.TARIFF}
-          </p>
+        <section>
+          <Capital updateAction={dispatchReducer} />
+          <Income updateAction={dispatchReducer} />
         </section>
       </div>
     </Fragment>
