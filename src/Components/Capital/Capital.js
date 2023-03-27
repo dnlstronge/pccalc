@@ -54,7 +54,7 @@ const Capital = ({ updateAction }) => {
                 <label className={classes.label}>Total savings & capital
                     <input className={classes.input} onChange={handleCapital} type="number"/>
                 </label>
-                <p>Derived tariff income: £{tariff.toFixed(2)}pw</p>
+                <p className={classes.para}>*derived tariff income = £{tariff.toFixed(2)}pw</p>
             </div>
         </Fragment>
     )
