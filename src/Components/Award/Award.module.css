@@ -12,6 +12,7 @@
     border-radius: 10px;
     border: 2px solid black;
     transition: transform .2s; /* Animation */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .container:hover { 

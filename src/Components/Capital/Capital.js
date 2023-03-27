@@ -50,11 +50,10 @@ const Capital = ({ updateAction }) => {
     return (
         <Fragment>
             <div className={classes.container}>
-                <h4>Total capital</h4>
-                <label className={classes.label}>
+                <h4>Capital</h4>
+                <label className={classes.label}>Total savings & capital
                     <input className={classes.input} onChange={handleCapital} type="number"/>
                 </label>
-                <p>Capital after disregard: £{capital.toFixed(2)}</p>
                 <p>Derived tariff income: £{tariff.toFixed(2)}pw</p>
             </div>
         </Fragment>
