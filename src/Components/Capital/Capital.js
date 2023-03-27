@@ -50,7 +50,7 @@ const Capital = ({ updateAction }) => {
     return (
         <Fragment>
             <div className={classes.container}>
-                <h4>Capital</h4>
+                <h4 className={classes.heading}>Capital</h4>
                 <label className={classes.label}>Total savings & capital
                     <input className={classes.input} onChange={handleCapital} type="number"/>
                 </label>
